@@ -1,0 +1,17 @@
+1. Analysis of Bluetooth Threats and v4.0 Security.pdf
+I did not understand the paper. It says analysis, but for me it is super general overview. Not sure if we can use it.
+
+
+2. Bluetooth Security in Wearable Computing Applications.pdf
+Also more of an overview than a research paper, however it contains proper details about security levels in bluetooth which we should compare to audio, maybe?
+
+
+
+3. Man-In-The-Middle Attacks on Bluetooth.pdf
+Variations on man in the middle attacks. Please see suggestion below.
+
+
+Suggestion:
+All of these paper do not propose much new information, what I suggest is that we leave these papers for now aside. It will not help much to create new system, however this documents will do great job in comparing our system with pure bluetooth solution if we come to that.
+
+
