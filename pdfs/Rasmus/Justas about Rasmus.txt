@@ -1,8 +1,0 @@
-1. Efficient Device Pairing using 'Human-comparable' Synchronized Audiovisual Patterns.pdf
-
-Another interesting way of pairing devices using audio (beep beep) and visual (blink blink). However, I am not sure if we could use much from this paper and the way it is written is not very good. And the protocol used (SAS), if my memory is not water yet is a serial protocol which in audio(the way we want to use) would be hard to use.
-
-
-2.HAPADEP Human-Assisted Pure Audio Device Pairing.pdf
-
-Ideas from implementation part are good. I would like to look more into codecs with which we could encode whatever noise/sound we are going to use, it should decrease amount of errors. Main point - the importance of codecs and we will need to look into that.

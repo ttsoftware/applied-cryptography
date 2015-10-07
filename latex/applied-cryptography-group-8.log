@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.21)  7 OCT 2015 14:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.21)  7 OCT 2015 17:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -850,6 +850,9 @@ LaTeX Warning: Label `subs:Troels' multiply defined.
 LaTeX Warning: Label `subs:Justas' multiply defined.
 
 
+LaTeX Warning: Label `subs:Troels' multiply defined.
+
+
 LaTeX Warning: Label `subs:Justas' multiply defined.
 
 
@@ -972,42 +975,42 @@ LaTeX Warning: No \author given.
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1]
-Overfull \hbox (3.29535pt too wide) in paragraph at lines 132--132
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1] [2]
+Overfull \hbox (3.29535pt too wide) in paragraph at lines 143--143
 []\OT1/cmr/bx/n/14.4 Efficient De-vice Pair-ing us-ing 'Human-comparable' Syn-c
 hro-
  []
 
 
-Overfull \hbox (2.22383pt too wide) in paragraph at lines 140--140
+Overfull \hbox (2.22383pt too wide) in paragraph at lines 158--158
 []\OT1/cmr/bx/n/14.4 HAPADEP Human-Assisted Pure Au-dio De-vice Pair-ing 
  []
 
-[2]
-Overfull \hbox (5.75368pt too wide) in paragraph at lines 156--156
+[3]
+Overfull \hbox (5.75368pt too wide) in paragraph at lines 174--174
 []\OT1/cmr/bx/n/14.4 Bluetooth Se-cu-rity in Wear-able Com-put-ing Ap-pli-ca-ti
 ons 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
 (./applied-cryptography-group-8.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
 Package rerunfilecheck Info: File `applied-cryptography-group-8.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: A76307AEDC546A52D503DE96F941B3B4;1518.
+(rerunfilecheck)             Checksum: 7966DC1DB4DB7E34E690EBE75630B6AD;1628.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 194.
  ) 
 Here is how much of TeX's memory you used:
- 19873 strings out of 493304
- 359822 string characters out of 6139870
- 486532 words of memory out of 5000000
- 22912 multiletter control sequences out of 15000+600000
+ 19882 strings out of 493304
+ 359920 string characters out of 6139870
+ 486563 words of memory out of 5000000
+ 22915 multiletter control sequences out of 15000+600000
  8870 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,6n,73p,969b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1016,10 +1019,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on applied-cryptography-group-8.pdf (4 pages, 76101 bytes).
+Output written on applied-cryptography-group-8.pdf (5 pages, 77677 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 269 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 

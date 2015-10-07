@@ -82,6 +82,17 @@
 
 \pagenumbering{arabic}
 
+\section{Solution}
+\label{sec:Solution}
+
+\begin{enumerate}
+    \item What is the problem?  (a more detailed definition of the project than presented on 24 September)
+    \item What is the proposed solution? (a brief overview of the proposed architecture)
+    \item How does 2) address 1)?  (an analysis of the solution that will replace the full evaluation that is normally found in a paper)
+\end{enumerate}
+
+\newpage
+
 \section{Litterature reviews}
 
 \subsection{Formal analysis of secure device pairing protocols}
@@ -135,7 +146,14 @@ I like the idea behind this protocol. The possibility for visually impaired user
 \subsubsection{Justas}
 \label{subs:Justas}
 
-Another interesting way of pairing devices using audio (beep beep) and visual (blink blink). However, I am not sure if we could use much from this paper and the way it is written is not very good. And the protocol used (SAS), if my memory is not water yet is a serial protocol which in audio(the way we want to use) would be hard to use.
+Another interesting way of pairing devices using audio (beep beep) and visual (blink blink). However, I am not sure if we could use much from this paper and the way it is written is not very good. And the protocol used (SAS), if my memory is not water yet is a serial protocol which in audio (the way we want to use) would be hard to use.
+
+\subsubsection{Troels}
+\label{subs:Troels}
+
+Good explanation of OOB. Sondi uses SAS, so it might not be a bad idea for audio-based pairing.
+I don't really like the idea of combining visual and audio channels to do the pairing. It seems like a very elaborate scheme which does not really add anything and could be simplified.
+What I read from this is basically that using only audio is much more stable and probably more reliable than using visual authentication. 
 
 \subsection{HAPADEP Human-Assisted Pure Audio Device Pairing}
 \label{sub:HAPADEP Human-Assisted Pure Audio Device Pairing}
