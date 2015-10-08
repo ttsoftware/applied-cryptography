@@ -89,11 +89,27 @@
     \item What is the problem?  (a more detailed definition of the project than presented on 24 September)
 
     \begin{itemize}
-        \item Pairing two devices involves each device authenticating the other, without the use of any pre-shared key and without any trusted authority. This opens up for dishonest agents and man-in-the-middle attacks. 
+        \item Pairing two devices involves each device authenticating the other, without the use of any pre-shared key and without any trusted authority. This opens up for dishonest agents and man-in-the-middle attacks.
+        \item If the two devices tries to share keys over Wi-Fi for instance, an attacker might intercept and modify the contents of the transmission.
     \end{itemize}
 
     \item What is the proposed solution? (a brief overview of the proposed architecture)
+
+    \begin{itemize}
+        \item We propose to use a out of band channel (OOB) in order to prevent attackers from intercepting or modifying the key exchange. An out of band channel is a different channel for transmitting data, besides the one regularly used by the device or protocol. In our solution we are going to use low volume inaudible frequency noise for exchanging a symmetric key between the devices.
+        We will base-100 encode the symmetric key, transmit it over audio, decode it and start communicating over the standard band.
+        This requires both devices to have a microphone and a speaker.
+        The devices must be close together in order to receive the low volume transmission, which is how the protocol guarantees the secrecy of the symmetric key. If the attacker wants to listen in on the exchange, the attacker must get physically very close to both devices.
+    \end{itemize}
+
     \item How does 2) address 1)?  (an analysis of the solution that will replace the full evaluation that is normally found in a paper)
+
+    \begin{itemize}
+        \item By taking advantage of the low proximity exchange of nonce, we will prevent most attackers from being able to intercept communication. The attacker must physically be standing right next to both devices at the same time.
+        This is also the downside of the solution, since both parties who wish to be paired need to be standing right next to each other.
+        \item The solution is also limited in the sense that it requires both devices to have both a microphone and a speaker. One can easily imagine a scenario where this is not the case, such as trying to pair a smartphone with home Hi-fi equipment which propably does not have a microphone.
+    \end{itemize}
+
 \end{enumerate}
 
 \newpage
