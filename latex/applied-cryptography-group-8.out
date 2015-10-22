@@ -1,22 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Solution description}{}% 1
-\BOOKMARK [1][-]{section.2}{Litterature reviews}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Formal analysis of secure device pairing protocols}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Justas}{subsection.2.1}% 4
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Troels}{subsection.2.1}% 5
-\BOOKMARK [2][-]{subsection.2.2}{Sondi master thesis}{section.2}% 6
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Justas}{subsection.2.2}% 7
-\BOOKMARK [3][-]{subsubsection.2.2.2}{Troels}{subsection.2.2}% 8
-\BOOKMARK [2][-]{subsection.2.3}{UbiSOUND}{section.2}% 9
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Justas}{subsection.2.3}% 10
-\BOOKMARK [3][-]{subsubsection.2.3.2}{Troels}{subsection.2.3}% 11
-\BOOKMARK [2][-]{subsection.2.4}{Efficient Device Pairing using 'Human-comparable' Synchronized Audiovisual Patterns}{section.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.4.1}{Justas}{subsection.2.4}% 13
-\BOOKMARK [3][-]{subsubsection.2.4.2}{Troels}{subsection.2.4}% 14
-\BOOKMARK [2][-]{subsection.2.5}{HAPADEP Human-Assisted Pure Audio Device Pairing}{section.2}% 15
-\BOOKMARK [3][-]{subsubsection.2.5.1}{Justas}{subsection.2.5}% 16
-\BOOKMARK [2][-]{subsection.2.6}{Analysis of Bluetooth Threats and v4.0 Security}{section.2}% 17
-\BOOKMARK [3][-]{subsubsection.2.6.1}{Justas}{subsection.2.6}% 18
-\BOOKMARK [2][-]{subsection.2.7}{Bluetooth Security in Wearable Computing Applications}{section.2}% 19
-\BOOKMARK [3][-]{subsubsection.2.7.1}{Justas}{subsection.2.7}% 20
-\BOOKMARK [2][-]{subsection.2.8}{Man-In-The-Middle Attacks on Bluetooth}{section.2}% 21
-\BOOKMARK [3][-]{subsubsection.2.8.1}{Justas}{subsection.2.8}% 22
+\BOOKMARK [1][-]{section.2}{Abstract}{}% 2
+\BOOKMARK [1][-]{section.3}{Introduction}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Related work}{section.3}% 4
+\BOOKMARK [1][-]{section.4}{Problem discription}{}% 5
+\BOOKMARK [1][-]{section.5}{Proposed solution}{}% 6
+\BOOKMARK [2][-]{subsection.5.1}{Threat analysis}{section.5}% 7
+\BOOKMARK [1][-]{section.6}{Comparison with state of the art}{}% 8
+\BOOKMARK [2][-]{subsection.6.1}{Threat comparison}{section.6}% 9
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 10
+\BOOKMARK [1][-]{section.8}{References}{}% 11

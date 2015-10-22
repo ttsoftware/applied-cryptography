@@ -1,6 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper, hmargin={2.5cm, 2.5cm}, vmargin={2.5cm, 2.5cm}]{geometry}
 
+\usepackage[nottoc,numbib]{tocbibind}
+
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amssymb}
@@ -80,6 +82,10 @@
 
 \newpage
 
+\tableofcontents
+
+\newpage
+
 \pagenumbering{arabic}
 
 \section{Solution description}
@@ -115,102 +121,47 @@
 
 \newpage
 
-\section{Litterature reviews}
+\section{Abstract}
+\label{sec:Abstract}
 
-\subsection{Formal analysis of secure device pairing protocols}
-\label{sub:Formal analysis of secure device pairing protocols}
+\newpage
 
-\subsubsection{Justas}
-\label{subs:Justas}
+\section{Introduction}
+\label{sec:Introduction}
 
-I think it is a great source for restriction / substitution of traditional attacker model introduced by Dolev and Yao (Dolev-Yao attacker model).
-The principle is that in Dolev-Yao attacker model, attacker is controlling all communication medium. In our case it would still be restricted whether by human interaction or something else?
-We could use this paper if we want to go a bit deeper into attack and the protocol itself. Maybe we could even model a protocol in AnB and  try to verify with ofmc, however it would require a bit more detailed knowledge of OFMC capabilities in this field (if we would go for Ubisound idea - 2 channels for 1 protocol)
+\subsection{Related work}
+\label{sub:Related work}
 
-\subsubsection{Troels}
-\label{subs:Troels}
 
-I agree it is a good example of extending Dolev-Yao, but I am not sure if this is really relevant if we are going to try and design our own theoretical audio pairing protocol / adding audio pairing to an existing protocol's key generation.
+\newpage
 
-\subsection{Sondi master thesis}
-\label{sub:Sondi master thesis}
+\section{Problem discription}
+\label{sec:Problem}
 
-\subsubsection{Justas}
-\label{subs:Justas}
+\newpage
 
-Well, I admit, it is a crappy and long paper. It goes too much into details not where we need. I would offer to skip this paper for sake of everyone.
-Otherwise a good paper to get an overview how sound waves work in environment (maybe a picture or two could be used to explain background of sound waves).
-Another quite okay point, to understand the job of encoding of message using audio channel (numbers are always fancy).
-We can bring another nice point, that audio channels are not reserved / licensed like radio or wifi channels.
+\section{Proposed solution}
+\label{sec:Proposed solution}
 
-\subsubsection{Troels}
-\label{subs:Troels}
+\subsection{Threat analysis}
+\label{sub:Threat analysis}
 
-I think this might be a good article to include for describing state of the art audio pairing. Even though they achieved limited success - especially due to background noise in public space, their system uses very little power. I think the idea is interesting and we should keep it in mind for our own idea development.
+\newpage
 
-\subsection{UbiSOUND}
-\label{sub:UbiSOUND}
+\section{Comparison with state of the art}
+\label{sec:Comparison with state of the art}
 
-\subsubsection{Justas}
-\label{subs:Justas}
+\subsection{Threat comparison}
+\label{sub:Threat comparison}
 
-I like the way of presenting the idea in this paper. The protocol also looks okay, however we can look into opportunities trying to improve it.
-Overall - interesting point to use 2 different mediums for exchanging data for DH.
+\section{Conclusion}
+\label{sec:Conclusion}
 
-\subsubsection{Troels}
-\label{subs:Troels}
+\newpage
 
-I like the idea behind this protocol. The possibility for visually impaired users are interesting, and for a very simple authentication scenario the protocol might work out well. I am not convinced that there is not a man in the middle attack on this protocol though. If the devices have some distance between them, and an attack intercepts the audio transmitted, disrupts it with noise and subsequently transmits his own audio key, he might be able to imitate the original sender.
-
-\subsection{Efficient Device Pairing using 'Human-comparable' Synchronized Audiovisual Patterns}
-\label{sub:Efficient Device Pairing using 'Human-comparable' Synchronized Audiovisual Patterns}
-
-\subsubsection{Justas}
-\label{subs:Justas}
-
-Another interesting way of pairing devices using audio (beep beep) and visual (blink blink). However, I am not sure if we could use much from this paper and the way it is written is not very good. And the protocol used (SAS), if my memory is not water yet is a serial protocol which in audio (the way we want to use) would be hard to use.
-
-\subsubsection{Troels}
-\label{subs:Troels}
-
-Good explanation of OOB. Sondi uses SAS, so it might not be a bad idea for audio-based pairing.
-I don't really like the idea of combining visual and audio channels to do the pairing. It seems like a very elaborate scheme which does not really add anything and could be simplified.
-What I read from this is basically that using only audio is much more stable and probably more reliable than using visual authentication.
-
-\subsection{HAPADEP Human-Assisted Pure Audio Device Pairing}
-\label{sub:HAPADEP Human-Assisted Pure Audio Device Pairing}
-
-\subsubsection{Justas}
-\label{subs:Justas}
-
-Ideas from implementation part are good. I would like to look more into codecs with which we could encode whatever noise/sound we are going to use, it should decrease amount of errors. Main point - the importance of codecs and we will need to look into that.
-
-\subsection{Analysis of Bluetooth Threats and v4.0 Security}
-\label{sub:Analysis of Bluetooth Threats and v4.0 Security}
-
-\subsubsection{Justas}
-\label{subs:Justas}
-
-I did not understand the paper. It says analysis, but for me it is super general overview. Not sure if we can use it.
-
-\subsection{Bluetooth Security in Wearable Computing Applications}
-\label{sub:Bluetooth Security in Wearable Computing Applications}
-
-\subsubsection{Justas}
-\label{subs:Justas}
-
-Also more of an overview than a research paper, however it contains proper details about security levels in bluetooth which we should compare to audio, maybe?
-
-\subsection{Man-In-The-Middle Attacks on Bluetooth}
-\label{sub:Man-In-The-Middle Attacks on Bluetooth}
-
-\subsubsection{Justas}
-\label{subs:Justas}
-
-Variations on man in the middle attacks. Please see suggestion below.
-
-Suggestion:
-All of these paper do not propose much new information, what I suggest is that we leave these papers for now aside. It will not help much to create new system, however this documents will do great job in comparing our system with pure bluetooth solution if we come to that.
-
+\pagenumbering{gobble}
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{litterature}
 
 \end{document}
