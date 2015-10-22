@@ -51,7 +51,7 @@
 \title{
   \vspace{4cm}
   \begin{flushleft}
-  \Large{\textbf{Audio-based Out of Band key exchange}} \\
+  \Large{\textbf{Audio-based Out of Band Channel key exchange}} \\
   \large{Applied Cryptography}
   \end{flushleft}
   \vspace{0cm}
@@ -131,15 +131,15 @@
 
 \newpage
 
-\section{Related work on audio authentication}
+\section{Related work on audio authentication (Justas - 0.5p)}
 \label{sec:Related work on audio authentication}
 
-\section{State of the art authentication}
+\section{State of the art authentication (Vilius - 0.5p)}
 \label{sec:State of the art authentication}
 
 \newpage
 
-\section{Problem discription}
+\section{Problem description (Troels 1p)}
 \label{sec:Problem}
 
 \newpage
@@ -147,27 +147,48 @@
 \section{Proposed solution}
 \label{sec:Proposed solution}
 
-\subsection{Strengths}
+\subsection{Solution description (Troels 1p)}
+\label{sub:Solution description}
+
+\subsection{Strengths (Rasmus 0.5p)}
 \label{sub:Strengths}
 
-\subsection{Weaknesses}
+\begin{itemize}
+    \item Out of band channel
+    \item Hard to temper messages
+    \item Broad device support
+\end{itemize}
+
+\subsection{Weaknesses (Rasmus 0.5p)}
 \label{sub:Weaknesses}
 
-\subsection{Threat analysis}
+\begin{itemize}
+    \item Poor quality microphones
+    \item Poor quality speakers
+    \item Different device capabilities
+    \item Distance limitations
+    \item Interference (noise in same frequency)
+\end{itemize}
+
+\subsection{Threat analysis (Rasmus 1p)}
 \label{sub:Threat analysis}
+
+\begin{itemize}
+    \item Man-in-middle attack
+    \item Eavesdropping
+    \item Interference (noise in same frequency)
+    \item Denial of Service
+\end{itemize}
 
 \newpage
 
-\section{Comparison with state of the art}
+\section{(Threat) Comparison with state of the art (Vilius 0.2p)}
 \label{sec:Comparison with state of the art}
 
-\subsection{Threat comparison}
-\label{sub:Threat comparison}
-
-\subsection{Bluetooth 4.0 PIN-code}
+\subsection{Bluetooth 4.0 PIN-code (Vilius 0.5p)}
 \label{sub:Bluetooth 4.0 PIN-code}
 
-\subsection{Bluetooth 4.0 Image scanning}
+\subsection{Bluetooth 4.0 Image scanning (Vilius 0.5p)}
 \label{sub:Bluetooth 4.0 Image scanning}
 
 \section{Conclusion}

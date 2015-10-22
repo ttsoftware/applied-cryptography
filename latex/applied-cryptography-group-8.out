@@ -1,16 +1,16 @@
 \BOOKMARK [1][-]{section.1}{Solution description}{}% 1
 \BOOKMARK [1][-]{section.2}{Abstract}{}% 2
 \BOOKMARK [1][-]{section.3}{Introduction}{}% 3
-\BOOKMARK [1][-]{section.4}{Related work on audio authentication}{}% 4
-\BOOKMARK [1][-]{section.5}{State of the art authentication}{}% 5
-\BOOKMARK [1][-]{section.6}{Problem discription}{}% 6
+\BOOKMARK [1][-]{section.4}{Related work on audio authentication \(Justas - 0.5p\)}{}% 4
+\BOOKMARK [1][-]{section.5}{State of the art authentication \(Vilius - 0.5p\)}{}% 5
+\BOOKMARK [1][-]{section.6}{Problem description \(Troels 1p\)}{}% 6
 \BOOKMARK [1][-]{section.7}{Proposed solution}{}% 7
-\BOOKMARK [2][-]{subsection.7.1}{Strengths}{section.7}% 8
-\BOOKMARK [2][-]{subsection.7.2}{Weaknesses}{section.7}% 9
-\BOOKMARK [2][-]{subsection.7.3}{Threat analysis}{section.7}% 10
-\BOOKMARK [1][-]{section.8}{Comparison with state of the art}{}% 11
-\BOOKMARK [2][-]{subsection.8.1}{Threat comparison}{section.8}% 12
-\BOOKMARK [2][-]{subsection.8.2}{Bluetooth 4.0 PIN-code}{section.8}% 13
-\BOOKMARK [2][-]{subsection.8.3}{Bluetooth 4.0 Image scanning}{section.8}% 14
+\BOOKMARK [2][-]{subsection.7.1}{Solution description \(Troels 1p\)}{section.7}% 8
+\BOOKMARK [2][-]{subsection.7.2}{Strengths \(Rasmus 0.5p\)}{section.7}% 9
+\BOOKMARK [2][-]{subsection.7.3}{Weaknesses \(Rasmus 0.5p\)}{section.7}% 10
+\BOOKMARK [2][-]{subsection.7.4}{Threat analysis \(Rasmus 1p\)}{section.7}% 11
+\BOOKMARK [1][-]{section.8}{\(Threat\) Comparison with state of the art \(Vilius 0.2p\)}{}% 12
+\BOOKMARK [2][-]{subsection.8.1}{Bluetooth 4.0 PIN-code \(Vilius 0.5p\)}{section.8}% 13
+\BOOKMARK [2][-]{subsection.8.2}{Bluetooth 4.0 Image scanning \(Vilius 0.5p\)}{section.8}% 14
 \BOOKMARK [1][-]{section.9}{Conclusion}{}% 15
 \BOOKMARK [1][-]{section.10}{References}{}% 16
