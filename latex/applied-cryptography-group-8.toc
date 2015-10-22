@@ -13,5 +13,5 @@
 \contentsline {section}{\numberline {8}(Threat) Comparison with state of the art (Vilius 0.2p)}{8}{section.8}
 \contentsline {subsection}{\numberline {8.1}Bluetooth 4.0 PIN-code (Vilius 0.5p)}{8}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Bluetooth 4.0 Image scanning (Vilius 0.5p)}{8}{subsection.8.2}
-\contentsline {section}{\numberline {9}Conclusion}{8}{section.9}
+\contentsline {section}{\numberline {9}Conclusion}{9}{section.9}
 \contentsline {section}{\numberline {10}References}{}{section.10}
