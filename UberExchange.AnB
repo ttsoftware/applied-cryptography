@@ -1,0 +1,22 @@
+Protocol: UberExchange
+
+Types: Agent a,b;
+       Number n1,n2,payload;
+       Function pk;
+       Symmetric_key kab
+
+Knowledge: a: a,b,n2,pk(a),inv(pk(a)),payload;
+	       b: a,b,n1,pk(b),inv(pk(b))
+
+Actions:
+
+a -> b: n2,pk(a)
+b -> a: n1,pk(b)
+
+a -> b: {payload}pk(b)
+
+
+Goals:
+a authenticates b on n1
+b authenticates a on n2
+a *->* b: payload

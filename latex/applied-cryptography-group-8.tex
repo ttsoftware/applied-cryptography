@@ -153,22 +153,22 @@
 \subsection{Strengths (Rasmus 0.5p)}
 \label{sub:Strengths}
 
-\begin{itemize}
-    \item Out of band channel
-    \item Hard to temper messages
-    \item Broad device support
-\end{itemize}
+The apparent advantage of using an OOB channel is the fact that it is quite a rare form of communication between mobile devices. This means that a potential intruder will either have to have a wide variety of attacks available, in order to quickly adapt to the sudden use of an obscure OOB channel, or have prior knowledge of the device pairing method being used during device pairing.
+
+Even if the intruder are ready for this specific device pairing method, the fact that the method uses audio during the authentication, makes it extremely difficult for the intruder to temper with the messages being transmitted. This is because sound waves can't be stopped or interrupted, which means the intruder won't be able to change the message, ensuring that correct message will always be sent, thus ensuring authentic communication. Furthermore, we take advantage of the fact, that using low volume audio means that the pairing devices must be close to one another, which means that the intruder must get really close to the pairing, can be difficult.
+
+In addition to the security advantages, utilizing audio for device pairing means that the method will be highly backwards compatible, as almost all, if not all mobile devices (phones) has some kind of microphone and speaker. This further ensures, that the method won't be prone to aging quite as fast as other device pairing methods might.
+
 
 \subsection{Weaknesses (Rasmus 0.5p)}
 \label{sub:Weaknesses}
 
-\begin{itemize}
-    \item Poor quality microphones
-    \item Poor quality speakers
-    \item Different device capabilities
-    \item Distance limitations
-    \item Interference (noise in same frequency)
-\end{itemize}
+While our proposed solution has strong authentication, it also have disadvantages, that may prove to be difficult to address. While using audio ensures broad device support, it also relies on the device to be able to record and understand the transmitted messages, which might prove difficult for older devices, where the speaker or microphone might be of poor quality. This is very problematic, as our method won't be able to securely authenticate the devices if the audio can't be understood by the device.
+
+The fact that we use low volume audio to ensure better security also comes with the downside of lessened convenience because the low volume decreases the distance within the devices are capable of pairing.
+
+A potential intruder might have difficulties with tempering with the audio messages sent during authentication, but it is extremely easy to interfere with the pairing in such a way, that the authentication process simply can not be completed. This can be done by broadcasting noise in the same frequency as the authentication messages, which will render the pairing devices unable to understand any message being sent to them.
+
 
 \subsection{Threat analysis (Rasmus 1p)}
 \label{sub:Threat analysis}

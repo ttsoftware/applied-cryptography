@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.21)  22 OCT 2015 14:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.18)  27 OCT 2015 21:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**"/media/secondary/Copy/Studie/DTU/applied cryptography/latex/applied-cryptogr
-aphy-group-8.tex"
+**/home/rasmus/Documents/applied-cryptography/latex/applied-cryptography-group-
+8.tex
 
-(/media/secondary/Copy/Studie/DTU/applied cryptography/latex/applied-cryptograp
-hy-group-8.tex
+(/home/rasmus/Documents/applied-cryptography/latex/applied-cryptography-group-8
+.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -967,7 +967,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 98.
-[1] [2] [3] [4] [5] [6] [7] [8] [9] (./applied-cryptography-group-8.bbl)
+[1] [2] [3] [4] [5] [6] [7] [8] [9] [10] (./applied-cryptography-group-8.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -985,13 +985,13 @@ anged.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 206.
  ) 
 Here is how much of TeX's memory you used:
- 20021 strings out of 493304
- 361529 string characters out of 6139870
- 488722 words of memory out of 5000000
+ 20022 strings out of 493304
+ 361504 string characters out of 6139871
+ 488723 words of memory out of 5000000
  23029 multiletter control sequences out of 15000+600000
  13733 words of font info for 53 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,6n,73p,971b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,6n,73p,959b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
@@ -1000,10 +1000,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt12.pfb>
-Output written on applied-cryptography-group-8.pdf (12 pages, 102246 bytes).
+Output written on applied-cryptography-group-8.pdf (13 pages, 105306 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

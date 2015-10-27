@@ -1,9 +1,9 @@
-PWD /media/secondary/Copy/Studie/DTU/applied cryptography/latex
+PWD /home/rasmus/Documents/applied-cryptography/latex
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /media/secondary/Copy/Studie/DTU/applied cryptography/latex/applied-cryptography-group-8.tex
+INPUT /home/rasmus/Documents/applied-cryptography/latex/applied-cryptography-group-8.tex
 OUTPUT applied-cryptography-group-8.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

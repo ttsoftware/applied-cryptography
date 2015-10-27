@@ -9,9 +9,9 @@
 \contentsline {subsection}{\numberline {7.1}Solution description (Troels 1p)}{7}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Strengths (Rasmus 0.5p)}{7}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}Weaknesses (Rasmus 0.5p)}{7}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Threat analysis (Rasmus 1p)}{7}{subsection.7.4}
-\contentsline {section}{\numberline {8}(Threat) Comparison with state of the art (Vilius 0.2p)}{8}{section.8}
-\contentsline {subsection}{\numberline {8.1}Bluetooth 4.0 PIN-code (Vilius 0.5p)}{8}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Bluetooth 4.0 Image scanning (Vilius 0.5p)}{8}{subsection.8.2}
-\contentsline {section}{\numberline {9}Conclusion}{9}{section.9}
+\contentsline {subsection}{\numberline {7.4}Threat analysis (Rasmus 1p)}{8}{subsection.7.4}
+\contentsline {section}{\numberline {8}(Threat) Comparison with state of the art (Vilius 0.2p)}{9}{section.8}
+\contentsline {subsection}{\numberline {8.1}Bluetooth 4.0 PIN-code (Vilius 0.5p)}{9}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Bluetooth 4.0 Image scanning (Vilius 0.5p)}{9}{subsection.8.2}
+\contentsline {section}{\numberline {9}Conclusion}{10}{section.9}
 \contentsline {section}{\numberline {10}References}{}{section.10}
