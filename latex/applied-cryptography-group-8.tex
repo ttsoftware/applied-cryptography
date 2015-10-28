@@ -88,39 +88,6 @@
 
 \pagenumbering{arabic}
 
-\section{Solution description}
-\label{sec:Solution description}
-
-\begin{enumerate}
-    \item What is the problem?  (a more detailed definition of the project than presented on 24 September)
-
-    \begin{itemize}
-        \item Pairing two devices involves each device authenticating the other, without the use of any pre-shared key and without any trusted authority. This opens up for dishonest agents and man-in-the-middle attacks.
-        \item If the two devices tries to share keys over Wi-Fi for instance, an attacker might intercept and modify the contents of the transmission.
-    \end{itemize}
-
-    \item What is the proposed solution? (a brief overview of the proposed architecture)
-
-    \begin{itemize}
-        \item We propose to use a out of band channel (OOB) in order to prevent attackers from intercepting or modifying the key exchange. An out of band channel is a different channel for transmitting data, besides the one regularly used by the device or protocol. In our solution we are going to use inaudible frequency (high frequency) noise for exchanging a symmetric key between the devices.
-        We will base-100 encode the symmetric key, transmit it over audio, decode it and start communicating over the standard band.
-        This requires both devices to have a microphone and a speaker.
-        The devices must be close together in order to receive the low volume transmission, which is how the protocol guarantees the secrecy of the symmetric key. If the attacker wants to listen in on the exchange, the attacker must get physically very close to both devices.
-    \end{itemize}
-
-    \item How does 2) address 1)?  (an analysis of the solution that will replace the full evaluation that is normally found in a paper)
-
-    \begin{itemize}
-        \item By taking advantage of the low proximity exchange of nonce, we will prevent most attackers from being able to intercept communication. The attacker must physically be standing right next to both devices at the same time.
-        This is also the downside of the solution, since both parties who wish to be paired need to be standing right next to each other.
-        \item The solution is also limited in the sense that it requires both devices to have both a microphone and a speaker. One can easily imagine a scenario where this is not the case, such as trying to pair a smartphone with home Hi-fi equipment which propably does not have a microphone. The two microphones must also be able to distinguish 100 different noises, in order for the base-100 encoding to work.
-        \item The solution is vulnerable to tempering if an attacker transmits a lot of noise in the same frequency, it would be possible to ruin the key exchange if timed correctly.
-    \end{itemize}
-
-\end{enumerate}
-
-\newpage
-
 \section{Abstract}
 \label{sec:Abstract}
 
@@ -142,6 +109,12 @@
 \section{Problem description (Troels 1p)}
 \label{sec:Problem}
 
+Secure authentication between previously unknown devices without a connection to the Internet is an open problem. Without pre-shared keys, a trusted third party, trusted certificate providers and the key-signing-chain more commonly used in authentication, it is very difficult to prevent man-in-the-middle attacks and identity spoofing.
+
+Allowing two devices to authenticate each other without a trusted third party or any pre-shared keys opens up for dishonest agents in the communication. Any attacker listening in on the initial communication between the two parties can either eavesdrop on all of their communications, or if the attack is able to modify or intercept the transmissions, fake the identify of either party.
+
+This is especially apparent in situations where the key exchange occurs on a common communication bands where attackers can easily scan packets for authentication requests.
+
 \newpage
 
 \section{Proposed solution}
@@ -149,6 +122,22 @@
 
 \subsection{Solution description (Troels 1p)}
 \label{sub:Solution description}
+
+We propose a scheme which uses an out of band channel (OOB) in order to prevent attackers from intercepting or modifying the key exchange. An out of band channel is a different channel for transmitting data, besides the one regularly used by the devices or protocol. In our solution we are going to use inaudible (high frequency) noise for exchanging a symmetric key between the two authenticating devices.
+
+We will base-100 encode the symmetric key, transmit it over an audio channel, decode it and start communicating over any standard band of communication since the scheme is agnostic to what band the symmetric key is used on.
+
+This authentication scheme requires both devices to have a microphone and a speaker.
+The devices must be within close proximity of one another in order to receive the low volume transmission, which is how the protocol guarantees the secrecy of the symmetric key. If the attacker wants to listen in on the exchange and intercept the key exchange, the attacker must get physically very close to both devices.
+
+The low proximity while exchanging the symmetric key is also the downside of the solution, since both parties who wish to be paired need to be right next to each other.
+
+The solution is also limited in the sense that it requires both devices to have both a microphone and a speaker. One can easily imagine a scenario where this is not the case, such as trying to pair a smartphone with home Hi-fi equipment which propably does not have a microphone. In addition the speakers and microphone on each device must respectively be able to distinguish between 100 different transmitted sounds as well as be able to transmit 100 different sounds, in order for the base-100 encoding to work.
+
+The solution is vulnerable to tampering or interference if an attacker transmits a lot of noise in the same frequency, it would be possible to ruin the key exchange if timed correctly. The key exchange could similarly be ruined if the physical location of the two devices happens to have a lot of ambient noise in the same frequency range.
+One possible solution to this problem is to choose a random communication frequency from a pre-defined set of frequencies. A sophisticated attacker might still be able to transmit in all of these frequencies in order to ruin the transmission, but switching frequencies would propably solve the problem of random ambient noise.
+
+\newpage
 
 \subsection{Strengths (Rasmus 0.5p)}
 \label{sub:Strengths}

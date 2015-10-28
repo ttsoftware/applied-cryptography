@@ -1,5 +1,4 @@
 latex/*.aux
-<<<<<<< HEAD
 latex/*.fls
 latex/*.bbl
 latex/*.blg
@@ -7,12 +6,5 @@ latex/*.log
 latex/*.out
 latex/*.toc
 latex/*.fdb_1
-
-=======
-latex/*.bbl
-latex/*.blg
 latex/*.fdb_latexmk
-latex/*.fls
-latex/*.log
-latex/*.out
->>>>>>> 9dd7e175f2a60fc277c6075fc7445092fc21a6ba
+latex/*.pdf
