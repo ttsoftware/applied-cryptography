@@ -100,8 +100,8 @@
 
 \section{Related work on audio authentication (Justas - 0.5p)}
 \label{sec:Related work on audio authentication}
-Secure pairing of two devices been a hot topic for the past decade and therefore there are numerous of documents as prior work. One of the early work by  Stajano, et al. \cite {pairingintro} brought device pairing to the stage and proposed to use physical contact for shared secret sharing. Physical contact such as a cable is not a feasible solution nowadays due to interfaces mismatch on devices and not being user friendly. Nonetheless, this paper was used as an inspiration for new papers in this field. An example of such is Balfanz, et al. \cite {talkingto} where usage of location-limited channels (LLC) was introduced with favor on infrared connection. Though, nowadays infrared is not popular on mobile devices as it used to be making this approach impractical. Yet this paper laid foundation for using Diffie-Hellman key exchange protocol in device pairing. After Balfanz, et al. \cite {talkingto} , the movement of device pairing split into two main parts – improving how Diffie-Hellman key exchange protocol is being implemented into real life systems– Ubisound \cite {ubisound}, HADAPEP \cite {hadapep} and handful of variants which LLC to use infrared, sound \cite {talkingto}, visible laser light \cite {laserlight}, light together accompanied by sound \cite {beeplight}. 
-All of the mentioned documents uses or prefer usage of heavy encryption algorithms, making the pairing slower than it is needed for common usage where data is not critical. 
+Secure pairing of two devices been a hot topic for the past decade and therefore there are numerous of documents as prior work. One of the early work by  Stajano, et al. \cite {pairingintro} brought device pairing to the stage and proposed to use physical contact for shared secret sharing. Physical contact such as a cable is not a feasible solution nowadays due to interfaces mismatch on devices and not being user friendly. Nonetheless, this paper was used as an inspiration for new papers in this field. An example of such is Balfanz, et al. \cite {talkingto} where usage of location-limited channels (LLC) was introduced with favor on infrared connection. Though, nowadays infrared is not popular on mobile devices as it used to be making this approach impractical. Yet this paper laid foundation for using Diffie-Hellman key exchange protocol in device pairing. After Balfanz, et al. \cite {talkingto} , the movement of device pairing split into two main parts – improving how Diffie-Hellman key exchange protocol is being implemented into real life systems– Ubisound \cite {ubisound}, HADAPEP \cite {hadapep} and handful of variants which LLC to use infrared, sound \cite {talkingto}, visible laser light \cite {laserlight}, light together accompanied by sound \cite {beeplight}.
+All of the mentioned documents uses or prefer usage of heavy encryption algorithms, making the pairing slower than it is needed for common usage where data is not critical.
 
 \section{State of the art authentication (Vilius - 0.5p)}
 \label{sec:State of the art authentication}
@@ -119,7 +119,7 @@ I: One device has a screen and another device has a numeric keypad. The device w
 
 	\item Out of Band (OoB)
 Generates 6-digit key and transfers it via OoB channel. This method is as secure as the OoB channel it uses.
-\end{enumerate}	
+\end{enumerate}
 All four ways are based on passing a short authenticated string, which is used to create a session between devices. SSP decides which method to use based on devices capabilities. The preferred method is  OoB, then NC, PE and the least preferred is JW.
 
 \newpage
