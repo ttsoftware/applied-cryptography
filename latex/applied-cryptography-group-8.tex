@@ -205,19 +205,26 @@ A potential intruder might have difficulties with tempering with the audio messa
 
 \newpage
 
-\section{(Threat) Comparison with state of the art (Vilius 0.2p)}
+\section{Comparison with state of the art (Vilius 0.2p)}
 \label{sec:Comparison with state of the art}
 
-\subsection{Bluetooth 4.0 JW (Vilius 0.5p)}
-\label{sub:Bluetooth 4.0 PIN-code}
+\subsection{Image scanning (Vilius 0.5p)}
+\label{sub:Image scanning}
 
-\subsection{Bluetooth 4.0 Image scanning (Vilius 0.5p)}
-\label{sub:Bluetooth 4.0 Image scanning}
+Bluetooth SSP using barcode or any other image as Out of Band (OoB) channel is a common practice. The method is as secure as the OoB channel it uses and image scanning as an OoB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks. 
+Image capture is very secure as an Out of Band channel. However, for this method to work both devices have to have comparably expensive hardware, a camera and a display screen, which is not common in many Bluetooth capable devices. Compared to our solution, we offer a method, which is as secure as image capture method if not even more secure and which could be used by many more Bluetooth devices without having to upgrade the hardware. 
 
-\subsection{Bluetooth 4.0 NFC (Vilius 0.5p)}
-\label{sub:Bluetooth 4.0 Image scanning}
+
+\subsection{NFC (Vilius 0.5p)}
+\label{sub:Image scanning}
+
+Using NFC OoB channel for Bluetooth communication is not a common practice, though it is a secure method, secure enough for bank to use it. The NFC works in very close proximity, which gives additional security against MITM and eavesdropping attacks on top of the implemented communication protocols. The reason that it is not used widely for Bluetooth devices pairing is that it is quite new method. Therefore, older devices or the ones which go for a lower price don’t have required hardware.
 
 \newpage
+\subsection{Bluetooth 4.0 JW (Vilius 0.5p)}
+\label{sub:Bluetooth 4.0 JW}
+
+JW method is the most commonly used Bluetooth pairing method. It is simple and has low hardware requirements. However, it has no protection against MITM attacks, where our solution provides protection against MITM and does not have high hardware requirements.
 
 \section{Conclusion}
 \label{sec:Conclusion}
