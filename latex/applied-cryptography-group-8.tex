@@ -158,13 +158,35 @@ One possible solution to this problem is to choose a random communication freque
 \subsubsection{Goals (Troels)}
 \label{subs:Goals}
 
+The goals of our solution can be summarized as follows:
+
+\begin{itemize}
+    \item Authenticate device $A$ with device $B$.
+    \item After authentication a secret symmetric key exists between $A$ and $B$.
+\end{itemize}
+
 \subsubsection{Requirements (Troels)}
 \label{subs:Requirements}
+
+The requirements of our solution can be summarized as either of the following setups:
+
+\begin{itemize}
+    \item Device $A$ has a microphone and device $B$ has a speaker.
+    \item Device $A$ has a speaker and device $B$ has a microphone.
+    \item Device $A$ has a both a microphone and speaker and device $B$ has a microphone.
+    \item Device $A$ has a both a microphone and speaker and device $B$ has a speaker.
+    \item Device $A$ has a both a microphone and speaker and device $B$ has both a microphone and a speaker.
+\end{itemize}
+
+All microphones must be able to transmit 100 different sounds.
+All speakers must be able to distinguish between 100 different sounds.
+Device A and B must both have a screen for displaying information to the user, and a way to accept user input.
 
 \subsubsection{Use case (Troels)}
 \label{subs:Use case}
 
-One main use case
+The primary use case of our solution is secure pairing between two smartphone devices who are strangers to each other, and who both possess a microphone and a speaker.
+The two smartphone users wish to have their devices paired with each other, in order to share files.
 
 \subsubsection{Sequence diagram (Troels)}
 \label{subs:Sequence diagram}
@@ -211,8 +233,8 @@ A potential intruder might have difficulties with tempering with the audio messa
 \subsection{Image scanning (Vilius 0.5p)}
 \label{sub:Image scanning}
 
-Bluetooth SSP using barcode or any other image as Out of Band (OoB) channel is a common practice. The method is as secure as the OoB channel it uses and image scanning as an OoB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks. 
-Image capture is very secure as an Out of Band channel. However, for this method to work both devices have to have comparably expensive hardware, a camera and a display screen, which is not common in many Bluetooth capable devices. Compared to our solution, we offer a method, which is as secure as image capture method if not even more secure and which could be used by many more Bluetooth devices without having to upgrade the hardware. 
+Bluetooth SSP using barcode or any other image as Out of Band (OoB) channel is a common practice. The method is as secure as the OoB channel it uses and image scanning as an OoB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks.
+Image capture is very secure as an Out of Band channel. However, for this method to work both devices have to have comparably expensive hardware, a camera and a display screen, which is not common in many Bluetooth capable devices. Compared to our solution, we offer a method, which is as secure as image capture method if not even more secure and which could be used by many more Bluetooth devices without having to upgrade the hardware.
 
 
 \subsection{NFC (Vilius 0.5p)}
