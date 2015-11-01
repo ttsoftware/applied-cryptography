@@ -95,12 +95,23 @@
 
 \section{Introduction (Justas)}
 \label{sec:Introduction}
+Secure authentication between previously unknown devices without a connection to the Internet is an open and computationally complex problem. Without pre-shared keys, a trusted third party, trusted certificate providers and the key-signing-chain more commonly used in authentication, it is very difficult to prevent man-in-the-middle attacks and identity spoofing.
+\newline
+Allowing two devices to authenticate each other without a trusted third party or any pre-shared keys opens up a place for dishonest agents in the communication. Any attacker listening in on the initial communication between the two parties can either eavesdrop on all of their communications, or if the attack is able to modify or intercept the transmissions - fake the identity of either party.
+\newline
+The initial approaches in solving the problem relied on using a physical contact in order to share secret, this was followed by offers to use location-limited channels such as Infrared. After that many different options came out for secret sharing – visual tags, light / laser channels, audio fingerprints. Very few solutions have reached the public market due to various reasons, therefore the field is still relatively open for new approaches.
+\newline
+In this paper, we want to take principle of audio fingerprinting in device pairing one step further as we believe it has not reached its capabilities. Audio fingerprinting was used in couple of the previously offered systems, however mostly to enable human to verify the devices. In this system we want to use audio as out-of-band (OOB) channel with inaudible (high frequency) audio to share a symmetric key which would be used as the main key between two authenticating parties. We will discuss how this can be achieved and analyze what strengths and weaknesses this approach introduces.
+\newline
+The remainder of this paper is organized as follows.
+Section 3 provides gives an overview of how device pairing evolved over years. This is followed by section 4, where we discuss state of art authentication methods using Bluetooth technology. In Section 5 we describe our proposed approach with threat analysis including advantages and disadvantages of the approach. Later in section 6 we compare our solution with the most used device pairing technologies. Section 7 finalizes the paper with conclusion and description of future work.
 
 \newpage
 
 \section{Related work on audio authentication (Justas - 0.5p)}
 \label{sec:Related work on audio authentication}
 Secure pairing of two devices been a hot topic for the past decade and therefore there are numerous of documents as prior work. One of the early work by  Stajano, et al. \cite {pairingintro} brought device pairing to the stage and proposed to use physical contact for shared secret sharing. Physical contact such as a cable is not a feasible solution nowadays due to interfaces mismatch on devices and not being user friendly. Nonetheless, this paper was used as an inspiration for new papers in this field. An example of such is Balfanz, et al. \cite {talkingto} where usage of location-limited channels (LLC) was introduced with favor on infrared connection. Though, nowadays infrared is not popular on mobile devices as it used to be making this approach impractical. Yet this paper laid foundation for using Diffie-Hellman key exchange protocol in device pairing. After Balfanz, et al. \cite {talkingto} , the movement of device pairing split into two main parts – improving how Diffie-Hellman key exchange protocol is being implemented into real life systems– Ubisound \cite {ubisound}, HADAPEP \cite {hadapep} and handful of variants which LLC to use infrared, sound \cite {talkingto}, visible laser light \cite {laserlight}, light together accompanied by sound \cite {beeplight}.
+\newline
 All of the mentioned documents uses or prefer usage of heavy encryption algorithms, making the pairing slower than it is needed for common usage where data is not critical.
 
 \section{State of the art authentication (Vilius - 0.5p)}
@@ -121,17 +132,6 @@ I: One device has a screen and another device has a numeric keypad. The device w
 Generates 6-digit key and transfers it via OoB channel. This method is as secure as the OoB channel it uses.
 \end{enumerate}
 All four ways are based on passing a short authenticated string, which is used to create a session between devices. SSP decides which method to use based on devices capabilities. The preferred method is  OoB, then NC, PE and the least preferred is JW.
-
-\newpage
-
-\section{Problem description (Troels 1p)}
-\label{sec:Problem}
-
-Secure authentication between previously unknown devices without a connection to the Internet is an open problem. Without pre-shared keys, a trusted third party, trusted certificate providers and the key-signing-chain more commonly used in authentication, it is very difficult to prevent man-in-the-middle attacks and identity spoofing.
-
-Allowing two devices to authenticate each other without a trusted third party or any pre-shared keys opens up for dishonest agents in the communication. Any attacker listening in on the initial communication between the two parties can either eavesdrop on all of their communications, or if the attack is able to modify or intercept the transmissions, fake the identify of either party.
-
-This is especially apparent in situations where the key exchange occurs on a common communication bands where attackers can easily scan packets for authentication requests.
 
 \newpage
 
@@ -250,12 +250,14 @@ JW method is the most commonly used Bluetooth pairing method. It is simple and h
 
 \section{Conclusion}
 \label{sec:Conclusion}
+\subsection{Future work}
+\label{sub:future work}
 
 \newpage
 
 \pagenumbering{gobble}
 \bibliographystyle{plain}
 \nocite{*}
-\bibliography{litterature}
+\bibliography{literature}
 
 \end{document}
