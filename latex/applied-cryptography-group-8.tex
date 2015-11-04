@@ -213,7 +213,7 @@ In addition to the security advantages, utilizing audio for device pairing means
 \subsection{Weaknesses (Rasmus 0.5p)}
 \label{sub:Weaknesses}
 
-While our proposed solution has strong authentication, it also have disadvantages, that may prove to be difficult to address. While using audio ensures broad device support, it also relies on the device to be able to record and understand the transmitted messages, which might prove difficult for older devices, where the speaker or microphone might be of poor quality. This is very problematic, as our method won't be able to securely authenticate the devices if the audio can't be understood by the device.
+While our proposed solution has strong authentication, it also has disadvantages, that may prove to be difficult to address. While using audio ensures broad device support, it also relies on the device to be able to record and understand the transmitted messages, which might prove difficult for older devices, where the speaker or microphone might be of poor quality. This is very problematic, as our method won't be able to securely authenticate the devices if the audio can't be understood by the device.
 
 The fact that we use low volume audio to ensure better security also comes with the downside of lessened convenience because the low volume decreases the distance within the devices are capable of pairing.
 
@@ -222,6 +222,14 @@ A potential intruder might have difficulties with tempering with the audio messa
 
 \subsection{Threat analysis (Rasmus 1p)}
 \label{sub:Threat analysis}
+
+While we attempt to minimize the ways to compromise our device pairing method, there are still attacks, that are hard to deal with, with the method we have chosen. Our method relies on transmitting a symmetric key in more or less unencrypted form. Because of this, the transmission is prone to eavesdropping, where an intruder may listen to the transmission and get hold of the symmetric key, which means that the intruder will be able to decrypt any future messages between the two paired devices. Additionally, if the intruder gets the symmetric key, it may be possible to also send fake messages to either device, acting as a Man-in-the-middle. We have minimized this risk by utilizing audio as an OOB channel as explained prior, but even if the risk is minimal, it is still there.
+
+Even if the intruder can't get hold of the symmetric key, there are still ways of interfering with the communication of the paired devices. During the authentication of the device pairing, the method relies on transmitting the symmetric key using audio at some inaudible frequency. Because we use audio, the receiving device has to clearly hear the the message, or it may not be able to decode it correctly. The attacker may take advantage of this and broadcast random noise in the same frequency that the device pairing uses. This way, the transmitted message will be obscured, and the receiving device won't be able to decode it, thus preventing the pairing.
+
+
+
+
 
 \begin{itemize}
     \item Man-in-middle attack
