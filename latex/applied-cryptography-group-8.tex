@@ -227,7 +227,7 @@ The two smartphone users wish to have their devices paired with each other, in o
 Diagram of how the protocol works
 
 \begin{figure}[h!]
-    \includegraphics[scale=0.5]{picture.png}
+    \includegraphics[scale=1]{fig/sequence.png}
     \caption{Sequence diagram}
 \end{figure}
 
@@ -270,27 +270,9 @@ Even if the intruder can't get hold of the symmetric key, there are still ways o
 \newpage
 \section{Solution analysis}
 
-
 \subsection{OOB channel}
-\subsection{100-base encryption}
-\subsection{Audio channel}
-\subsubsection{Frequency and inaudible audio}
-\subsubsection{Payload structure}
-Every time when device wants to share a secret key, its send the key in the following format:
-\begin{itemize}
 
-
-\item Start sequence - part where the listening device gets synchronized.
-\item Key sequence - the secret key.
-\item End sequence - end of communication.
-\end{itemize}
-PAYLOAD IMAGE HERE.
-
-\section{Solution analysis}
-\label{sec:Solution analysis}
-
-\subsection{Encoding audio in base 100}
-\label{sub:Encoding audio in base 100}
+\subsection{Base-100 encoding}
 
 We require the authenticating devices to be able to either transmit or receive 100 different sounds. This requirement allows us to treat the sounds as symbols in an alphabet with 100 distinct symbols. Such an alphabet would allow us to perform base-100 encoding of the symmetric key, meaning that we essentially can transmit a 256-bit key using only 83 sounds.
 
@@ -300,13 +282,27 @@ An example of this would be the following 256-bit key:
 
 Which can be encoded into base 100 as \seqsplit{3:85:80:65:19:41:57:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0}.
 
-\subsection{The audio channel}
-\label{sub:The audio channel}
+\subsection{Audio channel}
 
 \subsubsection{The inaudible frequencies}
 \label{subs:The inaudible frequencies}
 
 As with electromagnetic spectrum, there is a wide spectrum of audio which humans cannot hear both in frequencies higher than our capacity and in frequencies lower than our capacity. Since higher-frequency audio requires more energy we expect our solution would have better battery performance by using low-frequency audio transmissions.
+
+\subsubsection{Payload structure}
+Every time when device wants to share a secret key, its send the key in the following format:
+
+\begin{itemize}
+    \item Start sequence - part where the listening device gets synchronized.
+    \item Key sequence - the secret key.
+    \item End sequence - end of communication.
+\end{itemize}
+
+\begin{figure}[h!]
+    \includegraphics[scale=1]{fig/payload.png}
+    \caption{Payload diagram}
+\end{figure}
+
 
 \newpage
 
