@@ -24,6 +24,7 @@
 \usepackage{multirow}
 \usepackage{hhline}
 \usepackage{etoolbox}
+\usepackage{seqsplit}
 
 \usepackage{fancyhdr}
 
@@ -146,14 +147,14 @@ We propose a scheme which uses an out of band channel (OOB) in order to prevent 
 We will base-100 encode the symmetric key, transmit it over an audio channel, decode it and start communicating over any standard band of communication since the scheme is agnostic to what band the symmetric key is used on.
 
 This authentication scheme requires both devices to have a microphone and a speaker.
-The devices must be within close proximity of one another in order to receive the low volume transmission, which is how the protocol guarantees the secrecy of the symmetric key. If the attacker wants to listen in on the exchange and intercept the key exchange, the attacker must get physically very close to both devices.
+The devices must be within close proximity of one another in order to receive the low frequency transmission, which is how the protocol guarantees the secrecy of the symmetric key. If the attacker wants to listen in on the exchange and intercept the key exchange, the attacker must get physically very close to both devices.
 
 The low proximity while exchanging the symmetric key is also the downside of the solution, since both parties who wish to be paired need to be right next to each other.
 
 The solution is also limited in the sense that it requires both devices to have both a microphone and a speaker. One can easily imagine a scenario where this is not the case, such as trying to pair a smartphone with home Hi-fi equipment which propably does not have a microphone. In addition the speakers and microphone on each device must respectively be able to distinguish between 100 different transmitted sounds as well as be able to transmit 100 different sounds, in order for the base-100 encoding to work.
 
 The solution is vulnerable to tampering or interference if an attacker transmits a lot of noise in the same frequency, it would be possible to ruin the key exchange if timed correctly. The key exchange could similarly be ruined if the physical location of the two devices happens to have a lot of ambient noise in the same frequency range.
-One possible solution to this problem is to choose a random communication frequency from a pre-defined set of frequencies. A sophisticated attacker might still be able to transmit in all of these frequencies in order to ruin the transmission, but switching frequencies would propably solve the problem of random ambient noise.
+One possible solution to this problem is to choose a random communication frequency from a pre-defined set of frequencies. A sophisticated attacker might still be able to transmit in all of these frequencies in order to ruin the transmission, but switching frequencies would probably solve the problem of random ambient noise.
 
 \subsubsection{Goals (Troels)}
 \label{subs:Goals}
@@ -205,7 +206,7 @@ Diagram of how the protocol works
 
 The apparent advantage of using an OOB channel is the fact that it is quite a rare form of communication between mobile devices. This means that a potential intruder will either have to have a wide variety of attacks available, in order to quickly adapt to the sudden use of an obscure OOB channel, or have prior knowledge of the device pairing method being used during device pairing.
 
-Even if the intruder are ready for this specific device pairing method, the fact that the method uses audio during the authentication, makes it extremely difficult for the intruder to temper with the messages being transmitted. This is because sound waves can't be stopped or interrupted, which means the intruder won't be able to change the message, ensuring that correct message will always be sent, thus ensuring authentic communication. Furthermore, we take advantage of the fact, that using low volume audio means that the pairing devices must be close to one another, which means that the intruder must get really close to the pairing, can be difficult.
+Even if the intruder are ready for this specific device pairing method, the fact that the method uses audio during the authentication, makes it extremely difficult for the intruder to temper with the messages being transmitted. This is because sound waves can't be stopped or interrupted, which means the intruder won't be able to change the message, ensuring that correct message will always be sent, thus ensuring authentic communication. Furthermore, we take advantage of the fact, that using low frequency audio means that the pairing devices must be close to one another, which means that the intruder must get really close to the pairing, can be difficult.
 
 In addition to the security advantages, utilizing audio for device pairing means that the method will be highly backwards compatible, as almost all, if not all mobile devices (phones) has some kind of microphone and speaker. This further ensures, that the method won't be prone to aging quite as fast as other device pairing methods might.
 
@@ -215,7 +216,7 @@ In addition to the security advantages, utilizing audio for device pairing means
 
 While our proposed solution has strong authentication, it also has disadvantages, that may prove to be difficult to address. While using audio ensures broad device support, it also relies on the device to be able to record and understand the transmitted messages, which might prove difficult for older devices, where the speaker or microphone might be of poor quality. This is very problematic, as our method won't be able to securely authenticate the devices if the audio can't be understood by the device.
 
-The fact that we use low volume audio to ensure better security also comes with the downside of lessened convenience because the low volume decreases the distance within the devices are capable of pairing.
+The fact that we use low frequency audio to ensure better security also comes with the downside of lessened convenience because the low frequency decreases the distance within the devices are capable of pairing.
 
 A potential intruder might have difficulties with tempering with the audio messages sent during authentication, but it is extremely easy to interfere with the pairing in such a way, that the authentication process simply can not be completed. This can be done by broadcasting noise in the same frequency as the authentication messages, which will render the pairing devices unable to understand any message being sent to them.
 
@@ -227,16 +228,36 @@ While we attempt to minimize the ways to compromise our device pairing method, t
 
 Even if the intruder can't get hold of the symmetric key, there are still ways of interfering with the communication of the paired devices. During the authentication of the device pairing, the method relies on transmitting the symmetric key using audio at some inaudible frequency. Because we use audio, the receiving device has to clearly hear the the message, or it may not be able to decode it correctly. The attacker may take advantage of this and broadcast random noise in the same frequency that the device pairing uses. This way, the transmitted message will be obscured, and the receiving device won't be able to decode it, thus preventing the pairing.
 
-
-
-
-
 \begin{itemize}
     \item Man-in-middle attack
     \item Eavesdropping
     \item Interference (noise in same frequency)
     \item Denial of Service
 \end{itemize}
+
+\newpage
+
+\section{Solution analysis}
+\label{sec:Solution analysis}
+
+\subsection{Encoding audio in base 100}
+\label{sub:Encoding audio in base 100}
+
+We require the authenticating devices to be able to either transmit or receive 100 different sounds. This requirement allows us to treat the sounds as symbols in an alphabet with 100 distinct symbols. Such an alphabet would allow us to perform base-100 encoding of the symmetric key, meaning that we essentially can transmit a 256-bit key using only 83 sounds.
+
+An example of this would be the following 256-bit key:
+
+\seqsplit{01010101010010111110000000001010110000010101010101001011111000000000101011000001010101010100101111100000000010101100000101010101010010111110000000001010110000010101010101001011111000000000101011000001010101010100101111100000000010101100000100101011000001}
+
+Which can be encoded into base 100 as \seqsplit{3:85:80:65:19:41:57:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0}.
+
+\subsection{The audio channel}
+\label{sub:The audio channel}
+
+\subsubsection{The inaudible frequencies}
+\label{subs:The inaudible frequencies}
+
+As with electromagnetic spectrum, there is a wide spectrum of audio which humans cannot hear both in frequencies higher than our capacity and in frequencies lower than our capacity. Since higher-frequency audio requires more energy we expect our solution would have better battery performance by using low-frequency audio transmissions.
 
 \newpage
 
