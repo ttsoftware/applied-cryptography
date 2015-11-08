@@ -91,6 +91,8 @@
 
 \section{Abstract}
 \label{sec:Abstract}
+Abstract – The increasing amount of electronic gadget around us requires lightweight, unified and secure option for these gadgets pairing with our mobile devices. The advance in electronics gadgets was huge, however in the field of device pairing the technology did move for years. The absence of trusted third party makes device pairing problem hard to solve and solutions as using location limited channels were proposed. Our interest is the audio channel as it is one of the location limited channels and it has highly widespread usage between different devices.
+We propose a solution for secure device pairing using audio channel which uses the audio channel as secret key’s sharing channel to provide shared secret key for two communicating parties. In the paper we describe proposed solution and its analysis showing strengths and weaknesses.
 
 \newpage
 
@@ -139,8 +141,37 @@ All four ways are based on passing a short authenticated string, which is used t
 \section{Proposed solution}
 \label{sec:Proposed solution}
 
+\subsection{Goals and requirements}
+\label{sub:Goals and requirements}
+
+Goals:
+\begin{itemize}
+\item Find a method which could replace JW and would have MITM protection
+\item Find OoB channel which is secure, has low hardware requirements and needs little to non human interaction
+\end{itemize}
+
+Requirements:
+\begin{itemize}
+\item Device A can transmit 100 different sounds.
+\item Device B can distinguish between 100 different sounds
+\item Devices shall use base-100 encoding
+\item Devices A and B establishes a shared secret key
+\end{itemize}
+
+Qualities
+\begin{itemize}
+\item Pairing works without human interaction. Human can only press a button to initiate the pairing.
+\item People cannot hear audio channel
+\end{itemize}
+
 \subsection{Solution description (Troels 1p)}
 \label{sub:Solution description}
+
+Notes for Troels:
+\begin{itemize}
+\item mention PRNG in the description for key generation (1-2 sentences)
+\item try to describe more in depth.
+\end{itemize}
 
 We propose a scheme which uses an out of band channel (OOB) in order to prevent attackers from intercepting or modifying the key exchange. An out of band channel is a different channel for transmitting data, besides the one regularly used by the devices or protocol. In our solution we are going to use inaudible (high frequency) noise for exchanging a symmetric key between the two authenticating devices.
 
@@ -154,6 +185,7 @@ The low proximity while exchanging the symmetric key is also the downside of the
 The solution is also limited in the sense that it requires both devices to have both a microphone and a speaker. One can easily imagine a scenario where this is not the case, such as trying to pair a smartphone with home Hi-fi equipment which propably does not have a microphone. In addition the speakers and microphone on each device must respectively be able to distinguish between 100 different transmitted sounds as well as be able to transmit 100 different sounds, in order for the base-100 encoding to work.
 
 The solution is vulnerable to tampering or interference if an attacker transmits a lot of noise in the same frequency, it would be possible to ruin the key exchange if timed correctly. The key exchange could similarly be ruined if the physical location of the two devices happens to have a lot of ambient noise in the same frequency range.
+
 One possible solution to this problem is to choose a random communication frequency from a pre-defined set of frequencies. A sophisticated attacker might still be able to transmit in all of these frequencies in order to ruin the transmission, but switching frequencies would probably solve the problem of random ambient noise.
 
 \subsubsection{Goals (Troels)}
@@ -188,14 +220,14 @@ Device A and B must both have a screen for displaying information to the user, a
 
 The primary use case of our solution is secure pairing between two smartphone devices who are strangers to each other, and who both possess a microphone and a speaker.
 The two smartphone users wish to have their devices paired with each other, in order to share files.
-
+\fi
 \subsubsection{Sequence diagram (Troels)}
 \label{subs:Sequence diagram}
 
 Diagram of how the protocol works
 
 \begin{figure}[h!]
-    \includegraphics[scale=0.5]{sequence-diagram.png}
+    \includegraphics[scale=0.5]{picture.png}
     \caption{Sequence diagram}
 \end{figure}
 
@@ -236,6 +268,23 @@ Even if the intruder can't get hold of the symmetric key, there are still ways o
 \end{itemize}
 
 \newpage
+\section{Solution analysis}
+
+
+\subsection{OOB channel}
+\subsection{100-base encryption}
+\subsection{Audio channel}
+\subsubsection{Frequency and inaudible audio}
+\subsubsection{Payload structure}
+Every time when device wants to share a secret key, its send the key in the following format:
+\begin{itemize}
+
+
+\item Start sequence - part where the listening device gets synchronized.
+\item Key sequence - the secret key.
+\item End sequence - end of communication.
+\end{itemize}
+PAYLOAD IMAGE HERE.
 
 \section{Solution analysis}
 \label{sec:Solution analysis}
