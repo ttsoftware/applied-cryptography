@@ -213,13 +213,15 @@ A potential intruder might have difficulties with tempering with the audio messa
 \subsection{Threat analysis}
 \label{sub:Threat analysis}
 
-While we attempt to minimize the ways to compromise our device pairing method, there are still attacks, that are hard to deal with, with the method we have chosen. Our method relies on transmitting a symmetric key in more or less unencrypted form. Because of this, the transmission is prone to eavesdropping, where an intruder may listen to the transmission and get hold of the symmetric key, which means that the intruder will be able to decrypt any future messages between the two paired devices. Additionally, if the intruder gets the symmetric key, it may be possible to also send fake messages to either device, acting as a Man-in-the-middle. We have minimized this risk by utilizing audio as an OOB channel as explained prior, but even if the risk is minimal, it is still there.
+While we attempt to minimize the ways to compromise our device pairing method, there are still attacks that are hard to deal with, with our chosen method. Our method relies on transmitting a symmetric key in more or less unencrypted form. Because of this, the transmission is prone to eavesdropping, where an intruder may listen to the transmission and get hold of the symmetric key, which means that the intruder will be able to decrypt any future messages between the two paired devices. Additionally, if the intruder gets the symmetric key, it may be possible to also send fake messages to either device, acting as a Man-in-the-middle. We have minimized this risk by utilizing audio as an OOB channel as explained prior, but even if the risk is minimal, it is still there.
 
 Even if the intruder can't get hold of the symmetric key, there are still ways of interfering with the communication of the paired devices. During the authentication of the device pairing, the method relies on transmitting the symmetric key using audio at some inaudible frequency. Because we use audio, the receiving device has to clearly hear the the message, or it may not be able to decode it correctly. The attacker may take advantage of this and broadcast random noise in the same frequency that the device pairing uses. This way, the transmitted message will be obscured, and the receiving device won't be able to decode it, thus preventing the pairing.
 
 \section{Solution analysis}
 
 \subsection{OOB channel}
+
+Much like traditional channels such as WiFi, an OOB channel can be used in the same way to transmit data between devices. However, Out-of-Band (OOB) describes activities outside of defined telecommunication frequency bands. The advantage of using an OOB channel is that it is very uncommon, and thus attackers will have a much harder time making an attack in a given OOB channel. Given a secure protocol, using an OOB channel is not any more secure than a traditional channel. However, for scenarios, where it is not possible to use a sufficiently secure protocol, the protocol can become as secure as the OOB channel.
 
 \subsection{Base-100 encoding}
 
