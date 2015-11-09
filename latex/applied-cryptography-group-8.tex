@@ -181,6 +181,12 @@ We propose a scheme which uses an out of band channel (OOB) in order to prevent 
 
 We will base-100 encode the symmetric key, transmit it over an audio channel, decode it and start communicating over any standard band of communication since the scheme is agnostic to what band the symmetric key is used on.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.75]{fig/sequence.png}
+    \caption{Sequence diagram}
+\end{figure}
+
 This authentication scheme requires both devices to have a microphone and a speaker.
 The devices must be within close proximity of one another in order to receive the low frequency transmission, which is how the protocol guarantees the secrecy of the symmetric key. If the attacker wants to listen in on the exchange and intercept the key exchange, the attacker must get physically very close to both devices.
 
@@ -191,6 +197,24 @@ The solution is also limited in the sense that it requires both devices to have 
 The solution is vulnerable to tampering or interference if an attacker transmits a lot of noise in the same frequency, it would be possible to ruin the key exchange if timed correctly. The key exchange could similarly be ruined if the physical location of the two devices happens to have a lot of ambient noise in the same frequency range.
 
 One possible solution to this problem is to choose a random communication frequency from a pre-defined set of frequencies. A sophisticated attacker might still be able to transmit in all of these frequencies in order to ruin the transmission, but switching frequencies would probably solve the problem of random ambient noise.
+
+Our method has higher hardware requirements than JW, but it provides protection against most common attacks, what JW cannot do. Where JW ask close to none hardware requirements, for our method to work device A has to have speakers and device B has to have a microphone. These hardware requirements are considered low compared to other commonly use pairing methods. Considering security, our method has some weaknesses, but they are hard to exploit. All that makes our method a candidate to replace JW in many devices.
+
+\subsubsection{Solution overview}
+\label{subs:Solution overview}
+The following activity diagram overviews proposed solution's workflow when no failures occur.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.75]{fig/Activities.png}
+    \caption{Activities diagram}
+\end{figure}
+
+\newpage
+
+The pairing start the pairing device B must be ready to accept the key. Device A initiates the pairing. It starts by generating a random key using pseudorandom number generator. After key is ready, device A converts it to audio by using base-100 encoding and sends to device B through audio channel.
+Device B receives transmission sent by device A and by looking for start sequence and end sequence is able to distinguish the key. It stores the key for further communication and sends an acknowledgement to the device A protected using the new key.
+Device A knows that pairing was successful if it receives an acknowledgement protected with the sent key.
 
 \subsection{Strengths}
 \label{sub:Strengths}
