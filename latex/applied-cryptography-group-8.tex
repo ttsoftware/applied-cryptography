@@ -264,15 +264,17 @@ Even if the intruder can't get hold of the symmetric key, there are still ways o
 
 \subsection{OOB channel}
 
+Much like traditional channels such as WiFi, an OOB channel can be used in the same way to transmit data between devices. However, Out-of-Band (OOB) describes activities outside of defined telecommunication frequency bands. The advantage of using an OOB channel is that it is very uncommon, and thus attackers will have a much harder time making an attack in a given OOB channel. Given a secure protocol, using an OOB channel is not any more secure than a traditional channel. However, for scenarios, where it is not possible to use a sufficiently secure protocol, the protocol can become as secure as the OOB channel.
+
 \subsection{Base-100 encoding}
 
-We require the authenticating devices to be able to either transmit or receive 100 different sounds. This requirement allows us to treat the sounds as symbols in an alphabet with 100 distinct symbols. Such an alphabet would allow us to perform base-100 encoding of the symmetric key, meaning that we essentially can transmit a 256-bit key using only 83 sounds.
+We require the authenticating devices to be able to either transmit or receive 100 different sounds. This requirement allows us to treat the sounds as symbols in an alphabet with 100 distinct symbols. Such an alphabet would allow us to perform base-100 encoding of the symmetric key, meaning that we essentially can transmit a 256-bit key using only 10 sounds.
 
 An example of this would be the following 256-bit key:
 
 \seqsplit{01010101010010111110000000001010110000010101010101001011111000000000101011000001010101010100101111100000000010101100000101010101010010111110000000001010110000010101010101001011111000000000101011000001010101010100101111100000000010101100000100101011000001}
 
-Which can be encoded into base 100 as \seqsplit{3:85:80:65:19:41:57:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0}.
+Which can be encoded into base 100 as \seqsplit{3:7:31:26:22:66:37:53:6:8}.
 
 \subsection{Audio channel}
 
