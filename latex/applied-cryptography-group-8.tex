@@ -96,7 +96,7 @@ We propose a solution for secure device pairing using audio channel which uses t
 
 \newpage
 
-\section{Introduction (Justas)}
+\section{Introduction}
 \label{sec:Introduction}
 Secure authentication between previously unknown devices without a connection to the Internet is an open and computationally complex problem. Without pre-shared keys, a trusted third party, trusted certificate providers and the key-signing-chain more commonly used in authentication, it is very difficult to prevent man-in-the-middle attacks and identity spoofing.
 \newline
@@ -111,13 +111,13 @@ Section 3 provides gives an overview of how device pairing evolved over years. T
 
 \newpage
 
-\section{Related work on audio authentication (Justas - 0.5p)}
+\section{Related work on audio authentication}
 \label{sec:Related work on audio authentication}
 Secure pairing of two devices been a hot topic for the past decade and therefore there are numerous of documents as prior work. One of the early work by  Stajano, et al. \cite {pairingintro} brought device pairing to the stage and proposed to use physical contact for shared secret sharing. Physical contact such as a cable is not a feasible solution nowadays due to interfaces mismatch on devices and not being user friendly. Nonetheless, this paper was used as an inspiration for new papers in this field. An example of such is Balfanz, et al. \cite {talkingto} where usage of location-limited channels (LLC) was introduced with favor on infrared connection. Though, nowadays infrared is not popular on mobile devices as it used to be making this approach impractical. Yet this paper laid foundation for using Diffie-Hellman key exchange protocol in device pairing. After Balfanz, et al. \cite {talkingto} , the movement of device pairing split into two main parts – improving how Diffie-Hellman key exchange protocol is being implemented into real life systems– Ubisound \cite {ubisound}, HADAPEP \cite {hadapep} and handful of variants which LLC to use infrared, sound \cite {talkingto}, visible laser light \cite {laserlight}, light together accompanied by sound \cite {beeplight}.
 \newline
 All of the mentioned documents uses or prefer usage of heavy encryption algorithms, making the pairing slower than it is needed for common usage where data is not critical.
 
-\section{State of the art authentication (Vilius - 0.5p)}
+\section{State of the art authentication}
 \label{sec:State of the art authentication}
 
 Bluetooth version 4.0 includes Secure Simple Pairing (SSP). It defines how two Bluetooth devices are paired. The main idea of SSP is to improve security against eavesdropping and MITM attacks. It is hard to achieve, Bluetooth devices have different input and output capabilities and can be attacked in different ways. Therefore, SSP can be used in four different ways:
@@ -164,7 +164,7 @@ Qualities
 \item People cannot hear audio channel
 \end{itemize}
 
-\subsection{Solution description (Troels 1p)}
+\subsection{Solution description}
 \label{sub:Solution description}
 
 Notes for Troels:
@@ -188,7 +188,7 @@ The solution is vulnerable to tampering or interference if an attacker transmits
 
 One possible solution to this problem is to choose a random communication frequency from a pre-defined set of frequencies. A sophisticated attacker might still be able to transmit in all of these frequencies in order to ruin the transmission, but switching frequencies would probably solve the problem of random ambient noise.
 
-\subsubsection{Goals (Troels)}
+\subsubsection{Goals}
 \label{subs:Goals}
 
 The goals of our solution can be summarized as follows:
@@ -198,7 +198,7 @@ The goals of our solution can be summarized as follows:
     \item After authentication a secret symmetric key exists between $A$ and $B$.
 \end{itemize}
 
-\subsubsection{Requirements (Troels)}
+\subsubsection{Requirements}
 \label{subs:Requirements}
 
 The requirements of our solution can be summarized as either of the following setups:
@@ -215,13 +215,13 @@ All microphones must be able to transmit 100 different sounds.
 All speakers must be able to distinguish between 100 different sounds.
 Device A and B must both have a screen for displaying information to the user, and a way to accept user input.
 
-\subsubsection{Use case (Troels)}
+\subsubsection{Use case}
 \label{subs:Use case}
 
 The primary use case of our solution is secure pairing between two smartphone devices who are strangers to each other, and who both possess a microphone and a speaker.
 The two smartphone users wish to have their devices paired with each other, in order to share files.
 \fi
-\subsubsection{Sequence diagram (Troels)}
+\subsubsection{Sequence diagram}
 \label{subs:Sequence diagram}
 
 Diagram of how the protocol works
@@ -233,41 +233,33 @@ Diagram of how the protocol works
 
 \newpage
 
-\subsection{Strengths (Rasmus 0.5p)}
+\subsection{Strengths}
 \label{sub:Strengths}
 
 The apparent advantage of using an OOB channel is the fact that it is quite a rare form of communication between mobile devices. This means that a potential intruder will either have to have a wide variety of attacks available, in order to quickly adapt to the sudden use of an obscure OOB channel, or have prior knowledge of the device pairing method being used during device pairing.
 
-Even if the intruder are ready for this specific device pairing method, the fact that the method uses audio during the authentication, makes it extremely difficult for the intruder to temper with the messages being transmitted. This is because sound waves can't be stopped or interrupted, which means the intruder won't be able to change the message, ensuring that correct message will always be sent, thus ensuring authentic communication. Furthermore, we take advantage of the fact, that using low frequency audio means that the pairing devices must be close to one another, which means that the intruder must get really close to the pairing, can be difficult.
+Even if the intruder are ready for this specific device pairing method, the fact that the method uses audio during the authentication, makes it extremely difficult for the intruder to temper with the messages being transmitted. This is because sound waves can't be stopped or interrupted, which means the intruder won't be able to change the message, ensuring that correct message will always be sent, thus ensuring authentic communication. Furthermore, we take advantage of the fact, that using low volume audio (With low volume, we mean a low enough decibel, that the devices won't be able to hear the sound outside of a few meters) means that the pairing devices must be close to one another, which means that the intruder must get really close to the pairing, can be difficult.
 
 In addition to the security advantages, utilizing audio for device pairing means that the method will be highly backwards compatible, as almost all, if not all mobile devices (phones) has some kind of microphone and speaker. This further ensures, that the method won't be prone to aging quite as fast as other device pairing methods might.
 
 
-\subsection{Weaknesses (Rasmus 0.5p)}
+\subsection{Weaknesses}
 \label{sub:Weaknesses}
 
 While our proposed solution has strong authentication, it also has disadvantages, that may prove to be difficult to address. While using audio ensures broad device support, it also relies on the device to be able to record and understand the transmitted messages, which might prove difficult for older devices, where the speaker or microphone might be of poor quality. This is very problematic, as our method won't be able to securely authenticate the devices if the audio can't be understood by the device.
 
-The fact that we use low frequency audio to ensure better security also comes with the downside of lessened convenience because the low frequency decreases the distance within the devices are capable of pairing.
+The fact that we use low volume audio to ensure better security also comes with the downside of lessened convenience because the low volume decreases the distance within the devices are capable of pairing.
 
 A potential intruder might have difficulties with tempering with the audio messages sent during authentication, but it is extremely easy to interfere with the pairing in such a way, that the authentication process simply can not be completed. This can be done by broadcasting noise in the same frequency as the authentication messages, which will render the pairing devices unable to understand any message being sent to them.
 
 
-\subsection{Threat analysis (Rasmus 1p)}
+\subsection{Threat analysis}
 \label{sub:Threat analysis}
 
 While we attempt to minimize the ways to compromise our device pairing method, there are still attacks, that are hard to deal with, with the method we have chosen. Our method relies on transmitting a symmetric key in more or less unencrypted form. Because of this, the transmission is prone to eavesdropping, where an intruder may listen to the transmission and get hold of the symmetric key, which means that the intruder will be able to decrypt any future messages between the two paired devices. Additionally, if the intruder gets the symmetric key, it may be possible to also send fake messages to either device, acting as a Man-in-the-middle. We have minimized this risk by utilizing audio as an OOB channel as explained prior, but even if the risk is minimal, it is still there.
 
 Even if the intruder can't get hold of the symmetric key, there are still ways of interfering with the communication of the paired devices. During the authentication of the device pairing, the method relies on transmitting the symmetric key using audio at some inaudible frequency. Because we use audio, the receiving device has to clearly hear the the message, or it may not be able to decode it correctly. The attacker may take advantage of this and broadcast random noise in the same frequency that the device pairing uses. This way, the transmitted message will be obscured, and the receiving device won't be able to decode it, thus preventing the pairing.
 
-\begin{itemize}
-    \item Man-in-middle attack
-    \item Eavesdropping
-    \item Interference (noise in same frequency)
-    \item Denial of Service
-\end{itemize}
-
-\newpage
 \section{Solution analysis}
 
 \subsection{OOB channel}
@@ -306,23 +298,23 @@ Every time when device wants to share a secret key, its send the key in the foll
 
 \newpage
 
-\section{Comparison with state of the art (Vilius 0.2p)}
+\section{Comparison with state of the art}
 \label{sec:Comparison with state of the art}
 
-\subsection{Image scanning (Vilius 0.5p)}
+\subsection{Image scanning}
 \label{sub:Image scanning}
 
 Bluetooth SSP using barcode or any other image as Out of Band (OoB) channel is a common practice. The method is as secure as the OoB channel it uses and image scanning as an OoB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks.
 Image capture is very secure as an Out of Band channel. However, for this method to work both devices have to have comparably expensive hardware, a camera and a display screen, which is not common in many Bluetooth capable devices. Compared to our solution, we offer a method, which is as secure as image capture method if not even more secure and which could be used by many more Bluetooth devices without having to upgrade the hardware.
 
 
-\subsection{NFC (Vilius 0.5p)}
+\subsection{NFC}
 \label{sub:Image scanning}
 
 Using NFC OoB channel for Bluetooth communication is not a common practice, though it is a secure method, secure enough for bank to use it. The NFC works in very close proximity, which gives additional security against MITM and eavesdropping attacks on top of the implemented communication protocols. The reason that it is not used widely for Bluetooth devices pairing is that it is quite new method. Therefore, older devices or the ones which go for a lower price don’t have required hardware.
 
 \newpage
-\subsection{Bluetooth 4.0 JW (Vilius 0.5p)}
+\subsection{Bluetooth 4.0 JW}
 \label{sub:Bluetooth 4.0 JW}
 
 JW method is the most commonly used Bluetooth pairing method. It is simple and has low hardware requirements. However, it has no protection against MITM attacks, where our solution provides protection against MITM and does not have high hardware requirements.
