@@ -239,7 +239,7 @@ Which can be encoded into base 100 as \seqsplit{3:7:31:26:22:66:37:53:6:8}.
 As with electromagnetic spectrum, there is a wide spectrum of audio which humans cannot hear both in frequencies higher than our capacity and in frequencies lower than our capacity. Since higher-frequency audio requires more energy we expect our solution would have better battery performance by using low-frequency audio transmissions.
 
 \subsubsection{Payload structure}
-Every time when device wants to share a secret key, its send the key in the following format:
+Every time a device wants to share a secret key, it sends the key in the following format:
 
 \begin{itemize}
     \item Start sequence - part where the listening device gets synchronized.
@@ -253,8 +253,6 @@ Every time when device wants to share a secret key, its send the key in the foll
 \end{figure}
 
 
-\newpage
-
 \section{Comparison with state of the art}
 \label{sec:Comparison with state of the art}
 
@@ -264,21 +262,26 @@ Every time when device wants to share a secret key, its send the key in the foll
 Bluetooth SSP using barcode or any other image as Out of Band (OOB) channel is a common practice. The method is as secure as the OOB channel it uses and image scanning as an OOB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks.
 Image capture is very secure as an Out of Band channel. However, for this method to work both devices have to have comparably expensive hardware, a camera and a display screen, which is not common in many Bluetooth capable devices. Compared to our solution, we offer a method, which is as secure as image capture method if not even more secure and which could be used by many more Bluetooth devices without having to upgrade the hardware.
 
+\newpage
+
 \subsection{NFC}
 \label{sub:Image scanning}
 
 Using NFC OOB channel for Bluetooth communication is not a common practice, though it is a secure method, secure enough for bank to use it. The NFC works in very close proximity, which gives additional security against MITM and eavesdropping attacks on top of the implemented communication protocols. The reason that it is not used widely for Bluetooth devices pairing is that it is quite new method. Therefore, older devices or the ones which go for a lower price do not have required hardware.
 
-\newpage
 \subsection{Bluetooth 4.0 JW}
 \label{sub:Bluetooth 4.0 JW}
 
 JW method is the most commonly used Bluetooth pairing method. It is simple and has low hardware requirements. However, it has no protection against MITM attacks, where our solution provides protection against MITM and does not have high hardware requirements.
 
+\newpage
+
 \section{Conclusion}
 \label{sec:Conclusion}
-\subsection{Future work}
-\label{sub:future work}
+
+When pairing two devices without the existence of a trusted third party, one can achieve approximately the same guarantee of privacy by using an out of band channel for exchanging encryption keys, assuming that this channel makes it difficult for an attacker to listen on the transmission.
+
+Specifically in the case of inaudible audio as an out of band channel for exchanging keys, we found that it would be very difficult for an attacker to intercept a key exchange, and impossible to reliably modify the communication. Using inaudible audio has the added benefit of being low-cost with respect to hardware requirements and battery usage. It could be implemented on a wide range of devices including smart-watches, cars and smart-phones requiring simply that the devices wishing to be paired in combination have both a microphone and a speaker.
 
 \newpage
 
