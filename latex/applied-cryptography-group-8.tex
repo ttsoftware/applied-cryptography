@@ -83,29 +83,30 @@
 
 \newpage
 
+\section*{Abstract}
+\label{sec:Abstract}
+The increasing amount of electronic gadgets around us requires a lightweight, unified and secure option for pairing these gadgets with our mobile devices. The absence of a trusted third party makes the device pairing problem stand out from conventional authentication mechanisms in use, and specifically requires an out of band channel in order to retrieve the same level of security. Our interest is the audio channel as it is a location-limited channels and it can be implemented on a broad set of different devices.
+We propose a solution for secure device pairing using audio channel which uses the audio channel for sharing a secret key for use only by two communicating parties. In the paper we describe a proposed solution and its analysis showing strengths and weaknesses.
+
+\newpage
+
 \tableofcontents
 
 \newpage
 
 \pagenumbering{arabic}
 
-\section{Abstract}
-\label{sec:Abstract}
-Abstract – The increasing amount of electronic gadget around us requires lightweight, unified and secure option for these gadgets pairing with our mobile devices. The advance in electronics gadgets was huge, however in the field of device pairing the technology did not move for years. The absence of trusted third party makes device pairing problem hard to solve and solutions as using location limited channels were proposed. Our interest is the audio channel as it is one of the location limited channels and it has highly widespread usage between different devices.
-We propose a solution for secure device pairing using audio channel which uses the audio channel as secret key’s sharing channel to provide shared secret key for two communicating parties. In the paper we describe proposed solution and its analysis showing strengths and weaknesses.
-
-\newpage
-
 \section{Introduction}
 \label{sec:Introduction}
-Secure authentication between previously unknown devices without a connection to the Internet is an open and computationally complex problem. Without pre-shared keys, a trusted third party, trusted certificate providers and the key-signing-chain more commonly used in authentication, it is very difficult to prevent man-in-the-middle attacks and identity spoofing.
-\newline
+
+Secure authentication between previously unknown devices without a connection to the Internet is an open and complex problem. Without pre-shared keys, a trusted third party, trusted certificate providers and the key-signing-chain more commonly used in authentication, it is very difficult to prevent man-in-the-middle attacks and identity spoofing.
+
 Allowing two devices to authenticate each other without a trusted third party or any pre-shared keys opens up a place for dishonest agents in the communication. Any attacker listening in on the initial communication between the two parties can either eavesdrop on all of their communications, or if the attack is able to modify or intercept the transmissions - fake the identity of either party.
-\newline
-The initial approaches in solving the problem relied on using a physical contact in order to share secret, this was followed by offers to use location-limited channels such as Infrared. After that many different options came out for secret sharing – visual tags, light / laser channels, audio fingerprints. Very few solutions have reached the public market due to various reasons, therefore the field is still relatively open for new approaches.
-\newline
-In this paper, we want to take principle of audio fingerprinting in device pairing one step further as we believe it has not reached its capabilities. Audio fingerprinting was used in couple of the previously offered systems, however mostly to enable human to verify the devices. In this system we want to use audio as out-of-band (OOB) channel with inaudible (high frequency) audio to share a symmetric key which would be used as the main key between two authenticating parties. We will discuss how this can be achieved and analyze what strengths and weaknesses this approach introduces.
-\newline
+
+The initial approaches in solving the problem relied on using a physical contact in order to share secret, this was followed by offers to use location-limited channels such as the infrared light spectrum. After that many different option have come out for secret sharing – visual tags, light / laser channels, audio fingerprints. Very few out-of-band solutions have gained widespread traction and popularity, therefore making the field open for new approaches.
+
+In this paper we want to take the principle of audio fingerprinting in device pairing one step further as we believe it has not reached its capabilities. Audio fingerprinting was used in previously offered systems, however mostly to enable humans to verify the devices. In this system we want to use audio as an out-of-band (OOB) channel with inaudible audio to share a symmetric key which would be used as the main key for encrypting communications between two authenticating parties. We will discuss how this can be achieved and analyze what strengths and weaknesses this approach introduces.
+
 The remainder of this paper is organized as follows.
 Section 3 provides gives an overview of how device pairing evolved over years. This is followed by section 4, where we discuss state of art authentication methods using Bluetooth technology. In Section 5 we describe our proposed approach with threat analysis including advantages and disadvantages of the approach. Later in section 6 we compare our solution with the most used device pairing technologies. Section 7 finalizes the paper with conclusion and description of future work.
 
@@ -113,8 +114,11 @@ Section 3 provides gives an overview of how device pairing evolved over years. T
 
 \section{Related work on audio authentication}
 \label{sec:Related work on audio authentication}
-Secure pairing of two devices been a hot topic for the past decade and therefore there are numerous of documents as prior work. One of the early work by  Stajano, et al. \cite {pairingintro} brought device pairing to the stage and proposed to use physical contact for shared secret sharing. Physical contact such as a cable is not a feasible solution nowadays due to interfaces mismatch on devices and not being user friendly. Nonetheless, this paper was used as an inspiration for new papers in this field. An example of such is Balfanz, et al. \cite {talkingto} where usage of location-limited channels (LLC) was introduced with favor on infrared connection. Though, nowadays infrared is not popular on mobile devices as it used to be making this approach impractical. Yet this paper laid foundation for using Diffie-Hellman key exchange protocol in device pairing. After Balfanz, et al. \cite {talkingto} , the movement of device pairing split into two main parts – improving how Diffie-Hellman key exchange protocol is being implemented into real life systems– Ubisound \cite {ubisound}, HADAPEP \cite {hadapep} and handful of variants which LLC to use infrared, sound \cite {talkingto}, visible laser light \cite {laserlight}, light together accompanied by sound \cite {beeplight}.
-\newline
+
+Secure pairing of two devices have been a hot topic for the past decade and therefore there are numerous of documents as prior work. One of the early works by  Stajano, et al. \cite {pairingintro} brought device pairing to the stage and proposed to use physical contact for secret sharing. Physical contact such as a cable is not a feasible solution nowadays due to interfaces mismatch on devices and not being user friendly. Nonetheless, his paper was used as an inspiration for new papers in this field.
+
+An example of such is Balfanz, et al. \cite {talkingto} where usage of location-limited channels (LLC) was introduced with favor on infrared connection. Though, currently infrared is not popular on mobile devices  making this approach impractical. Yet this paper laid foundation for using Diffie-Hellman key exchange protocol in device pairing. After Balfanz, et al. \cite {talkingto}, the movement of device pairing split into two main parts – improving how Diffie-Hellman key exchange protocol is being implemented into real life systems– Ubisound \cite {ubisound}, HADAPEP \cite {hadapep} and handful of variants which LLC to use infrared, sound \cite {talkingto}, visible laser light \cite {laserlight}, light together accompanied by sound \cite {beeplight}.
+
 All of the mentioned documents uses or prefer usage of heavy encryption algorithms, making the pairing slower than it is needed for common usage where data is not critical.
 
 \section{State of the art authentication}
@@ -123,18 +127,19 @@ All of the mentioned documents uses or prefer usage of heavy encryption algorith
 Bluetooth version 4.0 includes Secure Simple Pairing (SSP). It defines how two Bluetooth devices are paired. The main idea of SSP is to improve security against eavesdropping and MITM attacks. It is hard to achieve, Bluetooth devices have different input and output capabilities and can be attacked in different ways. Therefore, SSP can be used in four different ways:
 \begin{enumerate}
 	\item Numeric Comparison (NC)
-	Both devices generates and displays 6-digit key. User compares generated numbers and if they match, he/she confirms successful pairing. Used when both devices has a display and at least one of them has a capability of entering yes/no command.
+	Both devices generate and displays a 6-digit key. User compares generated numbers and if they match, he/she confirm the successful pairing. Used when both devices has a display and at least one of them has a capability of entering yes/no command.
 	\item Just Works (JW)
 	No user interaction and has no MITM protection. Used in devices without user interfaces.
 
 	\item Passkey Entry (PE)
-I: One device has a screen and another device has a numeric keypad. The device with the screen shows 6-digit key and then device with keypad enters the key.
+    I: One device has a screen and another device has a numeric keypad. The device with the screen shows a 6-digit key and then device with keypad enters the key.
 	II: Two devices has only numeric keypads. Both devices enter the same 6-digit key.
 
-	\item Out of Band (OoB)
-Generates 6-digit key and transfers it via OoB channel. This method is as secure as the OoB channel it uses.
+	\item Out of Band (OOB)
+    One or both devices generates a 6-digit key and transfers it via an OOB channel. This method is as secure as the OOB channel it uses.
 \end{enumerate}
-All four ways are based on passing a short authenticated string, which is used to create a session between devices. SSP decides which method to use based on devices capabilities. The preferred method is  OoB, then NC, PE and the least preferred is JW.
+
+All four ways are based on passing a short authenticated string, which is used to create a session between devices. SSP decides which method to use based on devices capabilities. The preferred method is  OOB, then NC, PE and the least preferred is JW.
 
 \newpage
 
@@ -145,33 +150,30 @@ All four ways are based on passing a short authenticated string, which is used t
 \label{sub:Goals and requirements}
 
 Goals:
+
 \begin{itemize}
-\item Find a method which could replace JW and would have MITM protection
-\item Find OoB channel which is secure, has low hardware requirements and needs little to non human interaction
+    \item Find a method which could replace JW and would have MITM protection
+    \item Find a OOB channel which is secure, has low hardware requirements and needs little to non human interaction
 \end{itemize}
 
 Requirements:
+
 \begin{itemize}
-\item Device A can transmit 100 different sounds.
-\item Device B can distinguish between 100 different sounds
-\item Devices shall use base-100 encoding
-\item Devices A and B establishes a shared secret key
+    \item Device A can transmit 100 different sounds.
+    \item Device B can distinguish between 100 different sounds
+    \item Devices shall use base-100 encoding
+    \item Devices A and B establishes a shared secret key
 \end{itemize}
 
-Qualities
+Qualities:
+
 \begin{itemize}
-\item Pairing works without human interaction. Human can only press a button to initiate the pairing.
-\item People cannot hear audio channel
+    \item Pairing works without human interaction. Humans only press a button to initiate the pairing.
+    \item People cannot hear the audio channel
 \end{itemize}
 
 \subsection{Solution description}
 \label{sub:Solution description}
-
-Notes for Troels:
-\begin{itemize}
-\item mention PRNG in the description for key generation (1-2 sentences)
-\item try to describe more in depth.
-\end{itemize}
 
 We propose a scheme which uses an out of band channel (OOB) in order to prevent attackers from intercepting or modifying the key exchange. An out of band channel is a different channel for transmitting data, besides the one regularly used by the devices or protocol. In our solution we are going to use inaudible (high frequency) noise for exchanging a symmetric key between the two authenticating devices.
 
@@ -187,51 +189,6 @@ The solution is also limited in the sense that it requires both devices to have 
 The solution is vulnerable to tampering or interference if an attacker transmits a lot of noise in the same frequency, it would be possible to ruin the key exchange if timed correctly. The key exchange could similarly be ruined if the physical location of the two devices happens to have a lot of ambient noise in the same frequency range.
 
 One possible solution to this problem is to choose a random communication frequency from a pre-defined set of frequencies. A sophisticated attacker might still be able to transmit in all of these frequencies in order to ruin the transmission, but switching frequencies would probably solve the problem of random ambient noise.
-
-\subsubsection{Goals}
-\label{subs:Goals}
-
-The goals of our solution can be summarized as follows:
-
-\begin{itemize}
-    \item Authenticate device $A$ with device $B$.
-    \item After authentication a secret symmetric key exists between $A$ and $B$.
-\end{itemize}
-
-\subsubsection{Requirements}
-\label{subs:Requirements}
-
-The requirements of our solution can be summarized as either of the following setups:
-
-\begin{itemize}
-    \item Device $A$ has a microphone and device $B$ has a speaker.
-    \item Device $A$ has a speaker and device $B$ has a microphone.
-    \item Device $A$ has a both a microphone and speaker and device $B$ has a microphone.
-    \item Device $A$ has a both a microphone and speaker and device $B$ has a speaker.
-    \item Device $A$ has a both a microphone and speaker and device $B$ has both a microphone and a speaker.
-\end{itemize}
-
-All microphones must be able to transmit 100 different sounds.
-All speakers must be able to distinguish between 100 different sounds.
-Device A and B must both have a screen for displaying information to the user, and a way to accept user input.
-
-\subsubsection{Use case}
-\label{subs:Use case}
-
-The primary use case of our solution is secure pairing between two smartphone devices who are strangers to each other, and who both possess a microphone and a speaker.
-The two smartphone users wish to have their devices paired with each other, in order to share files.
-\fi
-\subsubsection{Sequence diagram}
-\label{subs:Sequence diagram}
-
-Diagram of how the protocol works
-
-\begin{figure}[h!]
-    \includegraphics[scale=1]{fig/sequence.png}
-    \caption{Sequence diagram}
-\end{figure}
-
-\newpage
 
 \subsection{Strengths}
 \label{sub:Strengths}
@@ -266,13 +223,13 @@ Even if the intruder can't get hold of the symmetric key, there are still ways o
 
 \subsection{Base-100 encoding}
 
-We require the authenticating devices to be able to either transmit or receive 100 different sounds. This requirement allows us to treat the sounds as symbols in an alphabet with 100 distinct symbols. Such an alphabet would allow us to perform base-100 encoding of the symmetric key, meaning that we essentially can transmit a 256-bit key using only 83 sounds.
+We require the authenticating devices to be able to either transmit or receive 100 different sounds. This requirement allows us to treat the sounds as symbols in an alphabet with 100 distinct symbols. Such an alphabet would allow us to perform base-100 encoding of the symmetric key, meaning that we essentially can transmit a 256-bit key using only 10 sounds.
 
 An example of this would be the following 256-bit key:
 
 \seqsplit{01010101010010111110000000001010110000010101010101001011111000000000101011000001010101010100101111100000000010101100000101010101010010111110000000001010110000010101010101001011111000000000101011000001010101010100101111100000000010101100000100101011000001}
 
-Which can be encoded into base 100 as \seqsplit{3:85:80:65:19:41:57:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0}.
+Which can be encoded into base 100 as \seqsplit{3:7:31:26:22:66:37:53:6:8}.
 
 \subsection{Audio channel}
 
@@ -304,14 +261,13 @@ Every time when device wants to share a secret key, its send the key in the foll
 \subsection{Image scanning}
 \label{sub:Image scanning}
 
-Bluetooth SSP using barcode or any other image as Out of Band (OoB) channel is a common practice. The method is as secure as the OoB channel it uses and image scanning as an OoB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks.
+Bluetooth SSP using barcode or any other image as Out of Band (OOB) channel is a common practice. The method is as secure as the OOB channel it uses and image scanning as an OOB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks.
 Image capture is very secure as an Out of Band channel. However, for this method to work both devices have to have comparably expensive hardware, a camera and a display screen, which is not common in many Bluetooth capable devices. Compared to our solution, we offer a method, which is as secure as image capture method if not even more secure and which could be used by many more Bluetooth devices without having to upgrade the hardware.
-
 
 \subsection{NFC}
 \label{sub:Image scanning}
 
-Using NFC OoB channel for Bluetooth communication is not a common practice, though it is a secure method, secure enough for bank to use it. The NFC works in very close proximity, which gives additional security against MITM and eavesdropping attacks on top of the implemented communication protocols. The reason that it is not used widely for Bluetooth devices pairing is that it is quite new method. Therefore, older devices or the ones which go for a lower price don’t have required hardware.
+Using NFC OOB channel for Bluetooth communication is not a common practice, though it is a secure method, secure enough for bank to use it. The NFC works in very close proximity, which gives additional security against MITM and eavesdropping attacks on top of the implemented communication protocols. The reason that it is not used widely for Bluetooth devices pairing is that it is quite new method. Therefore, older devices or the ones which go for a lower price do not have required hardware.
 
 \newpage
 \subsection{Bluetooth 4.0 JW}
