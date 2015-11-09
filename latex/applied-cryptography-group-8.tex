@@ -121,6 +121,8 @@ An example of such is Balfanz, et al. \cite {talkingto} where usage of location-
 
 All of the mentioned documents uses or prefer usage of heavy encryption algorithms, making the pairing slower than it is needed for common usage where data is not critical.
 
+\newpage
+
 \section{State of the art authentication}
 \label{sec:State of the art authentication}
 
@@ -263,8 +265,6 @@ Every time a device wants to share a secret key, it sends the key in the followi
 
 Bluetooth SSP using barcode or any other image as Out of Band (OOB) channel is a common practice. The method is as secure as the OOB channel it uses and image scanning as an OOB is very secure. MIDM attacks are practically impossible. The attacker would have to be in very close proximity, few centimeter from the device that generated the image, for a fast interception of the key. Theoretically, if the attacker would have very high quality camera and could get a good angle, it would be possible to capture the image from a greater distance. However, the timeframe to do that is very small as well. The user will scan the code himself/herself quite fast, few second. To do that, he/she will place second device in from of the displayed image, that way shielding it from the attacker. Eavesdropping attacks faces the same problem as MIDM attacks.
 Image capture is very secure as an Out of Band channel. However, for this method to work both devices have to have comparably expensive hardware, a camera and a display screen, which is not common in many Bluetooth capable devices. Compared to our solution, we offer a method, which is as secure as image capture method if not even more secure and which could be used by many more Bluetooth devices without having to upgrade the hardware.
-
-\newpage
 
 \subsection{NFC}
 \label{sub:Image scanning}
