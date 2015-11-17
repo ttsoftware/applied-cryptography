@@ -1,0 +1,16 @@
+1.	Usability – easy to use. What is easy to use for one, might appear complicated to another.
+2.	Password generation – secure RNG. Secure is not defined, therefore we can assume that dice roll is used as RNG.
+3.	2.1, 2.3 and 2.4 or in general section 2 give contradictions for the consequences of passwords being compromised. Need to look in details, but report looks from company side which is not important. 
+4.	Unrealistic attacker model. What happens if we expand attacker model to Dolev – Yao. 
+5.	2 factor authentication is not explained nor its clear how it works.
+6.	What is really safe password? 8 char is not. Need to check how long it takes to break it.
+7.	Replay attack on figure 6. Analyze a bit more, how to prevent this
+8.	How to identify the devices.
+9.	HTTPS – we can use http over ssl1.0. Its not secure.
+10.	There is no detail how token is sent.
+11.	Figure 6 is horrible, it just confuses people and not clear how to the protocol is executed
+12.	Figure 3. Where the authentication cookie came from.
+13.	How Salt works here? How does it help you to have new salt for each password?
+14.	Why to use symmetric encryption. Why not to hash it. 
+15.	If the web browser is compromised, its critical. Every used password goes clear text. 
+16.	SHA 256 / bcrypt. 
